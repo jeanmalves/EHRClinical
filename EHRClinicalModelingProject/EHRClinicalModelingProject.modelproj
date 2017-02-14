@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0fe1d5ed-5c31-4742-9c3e-69a57cae0ccb}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>EHRClinicalModelingProject</Name>
+    <RootNamespace>EHRClinicalModelingProject</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="add_EHR.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="add_EHR.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>add_EHR.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="ativar_usuario.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ativar_usuario.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ativar_usuario.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="atribuir_EHR.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="atribuir_EHR.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>atribuir_EHR.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="autenticar_usuario.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="autenticar_usuario.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>autenticar_usuario.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="buscar_dados_pressao_sanguinea.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="buscar_dados_pressao_sanguinea.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>buscar_dados_pressao_sanguinea.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="buscar_paciente_por_EHR.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="buscar_paciente_por_EHR.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>buscar_paciente_por_EHR.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="buscar_paciente_por_nome.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="buscar_paciente_por_nome.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>buscar_paciente_por_nome.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="cadastrar_atendente.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="cadastrar_atendente.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>cadastrar_atendente.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="cadastrar_medico.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="cadastrar_medico.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>cadastrar_medico.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="cadastrar_paciente.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="cadastrar_paciente.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>cadastrar_paciente.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="cadastrar_pressao_sanguinea.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="cadastrar_pressao_sanguinea.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>cadastrar_pressao_sanguinea.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="cjto_medicoes_temp.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="cjto_medicoes_temp.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>cjto_medicoes_temp.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="editar_dados_paciente.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="editar_dados_paciente.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>editar_dados_paciente.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="listar_pacientes.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="listar_pacientes.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>listar_pacientes.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="listar_temp_corporal.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="listar_temp_corporal.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>listar_temp_corporal.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\EHRClinicalModelingProject.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

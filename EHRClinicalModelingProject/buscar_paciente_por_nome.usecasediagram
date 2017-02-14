@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e1348589-6a2f-484d-85f3-bd8dd54254d2" name="buscar_paciente_por_nome" linkedPackageId="808d57c6-8929-46e8-bce6-020e5c39ecd4" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="f293a052-cd39-4976-a4ad-446ba006d1e0">
+      <profileInstance Id="ea0cdf11-a3c1-4ae1-8a77-51ea444263a6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5cd391b8-3578-4634-b1bd-fce1ee6d99ef">
+      <profileInstance Id="72a4d8d0-0753-467d-a578-3eafea281a88" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="6dfc8eab-9ab5-4d92-a464-c804cc2c1bb8" name="Paciente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a31dfdde-6bbe-4b4e-8fb6-3756efb99f95" />
+        <targetEnds>
+          <association Id="a57901e4-9a18-4fcd-aa8b-091885dc6c7d" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Ativar o usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="63c30bdf-3f6f-4be1-827f-9aca98d5d59f" LastKnownName="Buscar paciente pelo nome" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="57ec5699-d504-4f2f-8acc-f2f832fcd98c" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cac762d9-1510-47f7-8864-ecba98f31337" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="022164d4-7747-4e48-8eb1-6ae1d24593b6" name="Ativar o usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fbe01ed4-5d6b-440d-8f1a-30ebc0064294" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c8ebc5f2-3571-49ce-a73e-05f366a01701" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="73023e22-d85e-4d59-883a-d09141696e0b" name="Atendente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b2a2b999-4f34-460e-9d86-d7046e185045" />
+        <targetEnds>
+          <association Id="6c9eb44e-1359-4616-9bf7-6392db04bcea" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Autenticar usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ba2cd111-9d7b-4f51-bcb8-6f423fab167d" LastKnownName="Autenticar usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="16b2a842-d544-421e-9464-620867ad420f" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e6eed4aa-13a9-4406-9f5b-0b7f93c36b4a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d9237e4a-43bb-4e8e-9e17-87f04832c23f" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="811c2b15-0d26-4c49-91b8-7f3a0ed150e2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="530cc59a-da8b-499e-9a03-962248256e9c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="63c30bdf-3f6f-4be1-827f-9aca98d5d59f" name="Buscar paciente pelo nome" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b8339039-ba96-44c0-b96c-687cd3278eaa" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ba2cd111-9d7b-4f51-bcb8-6f423fab167d" name="Autenticar usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2fc28a83-b834-4a39-8228-01f01b82552d" />
+        <targetEnds>
+          <association Id="3d4caaa7-bbc3-4607-b75a-4a32c487c346" isDerived="false" sourceEndRoleName="Autenticar usuário" targetEndRoleName="Sistema" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="00277e3b-f714-47cc-803d-da06fc996063" LastKnownName="Sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3dd9adbe-5a04-4e35-8f61-6772d07c471b" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0027efc7-4fc6-4b83-a35f-6e6a6e0051aa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f971507d-0896-44a3-9c60-80cf98f598e1" name="Sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a55d09e2-7d09-4b55-86ee-a78fce79d31b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="23e9cdfe-5c1f-4787-8a63-6686971c1938" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="3688fde4-3a31-443a-a846-03c0eea52e8a">
+            <useCaseMoniker Id="63c30bdf-3f6f-4be1-827f-9aca98d5d59f" LastKnownName="Buscar paciente pelo nome" />
+            <elementDefinition Id="33330315-2c16-49aa-a8a5-863e45925177" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="00277e3b-f714-47cc-803d-da06fc996063" name="Sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d111b158-6bed-4f33-b866-cb9970f759d3" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="808d57c6-8929-46e8-bce6-020e5c39ecd4" name="EHRClinicalModelingProject">
+    <elementDefinition Id="79c4b29f-79c9-4c13-900e-51b0277837e5" />
+  </package>
+</useCaseModelRoot>

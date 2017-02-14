@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="dc5c89c2-1faa-4595-8edf-7c0d2b243b5b" name="buscar_paciente_por_EHR" linkedPackageId="9e68212a-78eb-4797-b2d6-df692517b6f4" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a101dac3-9003-4153-baee-d59b5f110ee5" name="Paciente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="78c1d3b9-2a56-4a8b-9819-cab56f36a411" />
+        <targetEnds>
+          <association Id="63ac73f9-8de1-4ee5-a652-540fbc602cfc" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Ativar o usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3d888f11-1bec-4421-9bcb-4ca20079eed5" LastKnownName="Buscar paciente pelo registro eletrônico de saúde" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d0277ebd-0921-4efc-a4ae-29fdff063a1f" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6253fc1c-c7c7-4e35-be3a-44eb3d5e60fc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e125c50d-8164-49ef-b440-8b3a66714626" name="Ativar o usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="922319b3-e86f-4cd2-8468-8156a690ddb1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="753e200c-91ab-41b4-9332-ff4e52543669" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="882cb679-232d-4400-ba4e-66ffe95d7f85" name="Atendente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6d6aecec-5a6b-40c4-b4b7-a5bfe7642093" />
+        <targetEnds>
+          <association Id="ba24244d-d5d9-48c0-bf01-23d83a492195" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Autenticar usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6dd1f1da-6425-45b3-9ad6-99cb71bb5cb8" LastKnownName="Autenticar usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="552fe846-41b6-4924-a16f-9702b839f733" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d435615c-a543-4edc-a197-0beb72234974" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8c8ec512-189c-476c-8006-e9a1ddfbd226" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="08410a73-366a-4f7a-a8ff-7b92122d9e93" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ae47d987-066f-40ec-a460-3e0127472dda" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3d888f11-1bec-4421-9bcb-4ca20079eed5" name="Buscar paciente pelo registro eletrônico de saúde" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="436a90bb-9e13-41c1-b5fc-62d34d103929" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6dd1f1da-6425-45b3-9ad6-99cb71bb5cb8" name="Autenticar usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="07569ec2-4966-4fe1-ae43-07bfce4eef4e" />
+        <targetEnds>
+          <association Id="7fb1d87a-7c36-48a4-b47d-517732527524" isDerived="false" sourceEndRoleName="Autenticar usuário" targetEndRoleName="Sistema" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="27d6fa4a-0fbe-4e76-b9ab-2ce68f6b3161" LastKnownName="Sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2e59cb2e-d837-4e0a-9e97-fb499298399a" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="453737a8-58dd-4d4b-b136-cff2e120bbd8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea99a6bf-12f7-40db-acce-d96554346a6a" name="Sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="70e09109-901a-47d2-ab1b-f85aa0aefa5e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="120f155c-e4dd-4883-bb6e-67604fc3d09c" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="cd6fbd9f-24da-46cb-8520-a2d3bdf19192">
+            <useCaseMoniker Id="3d888f11-1bec-4421-9bcb-4ca20079eed5" LastKnownName="Buscar paciente pelo registro eletrônico de saúde" />
+            <elementDefinition Id="d88880e9-3943-4677-877c-15623cbf44ce" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="27d6fa4a-0fbe-4e76-b9ab-2ce68f6b3161" name="Sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5bc75c4c-24cb-488d-8815-9c06431411d0" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="9e68212a-78eb-4797-b2d6-df692517b6f4" name="EHRClinicalModelingProject">
+    <elementDefinition Id="79c4b29f-79c9-4c13-900e-51b0277837e5" />
+    <profileInstances>
+      <packageHasProfileInstances Id="398b8c89-2b3c-449c-8199-a955644b36ca">
+        <profileInstance Id="3b45324b-6103-4119-bb51-fe8b67d47726" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="098f4a82-d591-4503-97bb-c2b25dc4e486">
+        <profileInstance Id="9aed7197-2fc9-455a-8866-ca81f48a7eb2" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="1f76b166-e444-4bce-b4ee-96bb2cf4c0bc" name="cadastrar_atendente" linkedPackageId="cb8adaad-309d-4136-ac20-e6fec88d4eaa" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="eef48b7b-c717-46f0-8cc7-9bf8103bdb66">
+      <profileInstance Id="961994ca-b815-4547-8e9c-d22f919bfa95" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="bec6d94c-e50f-4c7c-8df0-851424d7a5f4">
+      <profileInstance Id="5254d2b6-c395-4f1e-a5db-3f507321c7d8" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="20cc961f-6d9b-43d0-a6d8-f1d9fb9103ab" name="Atendente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="03e27fb5-e808-4966-9189-a71e78f04b02" />
+        <targetEnds>
+          <association Id="64cca7bd-658e-4d79-b9e4-25c7aa2178ca" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Ativar o usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="402115e8-fbd7-41df-b9e7-7a9492a0d6e1" LastKnownName="Cadastrar atendente" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c9246975-af77-4e1d-8713-0d3b07c6b8ed" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e0fd74a0-ac08-4b54-a9e1-e073c8954fce" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="393f0bfb-4862-47ad-9242-0b22218adf17" name="Ativar o usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="126e6320-07de-4d2c-882c-607c548f8ae2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="068b37ee-ea8e-4705-a64b-dc6246eec559" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="a8231385-b0bb-469f-a60c-0577ac035a17" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c18f1fab-1320-47f8-a0b0-f6556605a8e9" />
+        <targetEnds>
+          <association Id="24cb1b56-e0af-47e6-bacc-7a528ae0db76" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Autenticar usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="22aad442-c1ff-4ffe-989d-8d44fcd0ffae" LastKnownName="Autenticar usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7f981d2b-6b5e-4fa4-bb64-791071e06baf" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d3053dda-4bfd-4ea8-8dcd-c4a4bf6f8ab1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f59bb3a4-96d8-46ce-8873-0e20dbb96a43" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c1d64d39-c065-4c89-95e8-5120cbec8bd8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2f977aa8-edee-48ef-9b7f-e3cc125fec76" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="402115e8-fbd7-41df-b9e7-7a9492a0d6e1" name="Cadastrar atendente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e9eb1dce-e3bd-4dbe-b69f-5b10f8754386" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="22aad442-c1ff-4ffe-989d-8d44fcd0ffae" name="Autenticar usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="90c586ba-2060-45f4-aeec-945aa187af59" />
+        <targetEnds>
+          <association Id="10c865d4-6936-46de-ae26-e2dfcea5d193" isDerived="false" sourceEndRoleName="Autenticar usuário" targetEndRoleName="Sistema" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="72b039ec-a1b3-4dcd-866b-010bab197217" LastKnownName="Sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0f2aa015-675a-42b6-be2b-8612fe354c3f" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cfbd9e23-2c8c-4a31-9cb5-33dc30a38279" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ad564868-d308-4115-bae8-71d6370c98d6" name="Sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="853d98c7-cb14-463f-b49d-bee10d2845a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="899102cf-26e7-473c-bd96-924289e72219" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="579c3da2-8a96-4b38-b049-e36569fe205e">
+            <useCaseMoniker Id="402115e8-fbd7-41df-b9e7-7a9492a0d6e1" LastKnownName="Cadastrar atendente" />
+            <elementDefinition Id="a33b6abd-e744-4fed-993c-477307072e65" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="72b039ec-a1b3-4dcd-866b-010bab197217" name="Sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2b78dc0c-c5aa-491d-b50a-4f16cd475328" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="cb8adaad-309d-4136-ac20-e6fec88d4eaa" name="EHRClinicalModelingProject">
+    <elementDefinition Id="79c4b29f-79c9-4c13-900e-51b0277837e5" />
+  </package>
+</useCaseModelRoot>

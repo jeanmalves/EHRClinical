@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHRClinicalWebApplication",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHRClinicalWebApplication.Tests", "EHRClinicalWebApplication.Tests\EHRClinicalWebApplication.Tests.csproj", "{5E5402D8-C341-4EB4-8245-CD45CDBB4A98}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "EHRClinicalModelingProject", "EHRClinicalModelingProject\EHRClinicalModelingProject.modelproj", "{0FE1D5ED-5C31-4742-9C3E-69A57CAE0CCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5E5402D8-C341-4EB4-8245-CD45CDBB4A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E5402D8-C341-4EB4-8245-CD45CDBB4A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E5402D8-C341-4EB4-8245-CD45CDBB4A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FE1D5ED-5C31-4742-9C3E-69A57CAE0CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE1D5ED-5C31-4742-9C3E-69A57CAE0CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE1D5ED-5C31-4742-9C3E-69A57CAE0CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE1D5ED-5C31-4742-9C3E-69A57CAE0CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

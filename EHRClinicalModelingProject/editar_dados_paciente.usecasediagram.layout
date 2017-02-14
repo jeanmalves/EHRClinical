@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="editar_dados_paciente">
+  <useCaseModelRootMoniker Id="b3c68612-18aa-48e1-bbfa-095aee2551ab" />
+  <nestedChildShapes>
+    <actorShape Id="202adf22-4bd0-4fb8-a08e-d4f971272132" absoluteBounds="7, 3, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="cd48e99f-d796-466f-8bfc-a5cde5030d04" LastKnownName="Paciente" />
+      <relativeChildShapes />
+    </actorShape>
+    <actorShape Id="048581af-c3f2-43ab-a931-1b29e45478f9" absoluteBounds="2.5, 3, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="04039556-c5f9-4465-a4fb-a6749e729e2f" LastKnownName="Atendente" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="4437650e-d92f-4eff-bfe7-fb90d78348bf" absoluteBounds="5.25, 1.875, 1.625, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="685e1067-83ee-4e2c-b934-6018c3aa27af" LastKnownName="Listar paciente" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(7 : 3.03947368421053); (6.45300658087732 : 2.57884764705459)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="b2de0794-7044-47e5-a671-339fabbd124c" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="202adf22-4bd0-4fb8-a08e-d4f971272132" />
+        <useCaseShapeMoniker Id="4437650e-d92f-4eff-bfe7-fb90d78348bf" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="174f43a1-cb9f-4cee-b6ab-be425308f753" absoluteBounds="2.625, 1.875, 1.625, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="787d289f-4e41-4fed-a713-ade30870e8fe" LastKnownName="Autenticar usuário" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(4.25 : 2.25); (5.25 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="2fbcd387-6113-4970-8e1a-00c093e75b67" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="174f43a1-cb9f-4cee-b6ab-be425308f753" />
+        <useCaseShapeMoniker Id="4437650e-d92f-4eff-bfe7-fb90d78348bf" />
+      </nodes>
+    </includeConnector>
+    <useCaseAssociationConnector edgePoints="[(2.921875 : 3); (3.19176183572735 : 2.60743732985113)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="c75cc4f5-1bba-46c2-905a-222d067940fc" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="048581af-c3f2-43ab-a931-1b29e45478f9" />
+        <useCaseShapeMoniker Id="174f43a1-cb9f-4cee-b6ab-be425308f753" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <actorShape Id="c6b953c9-24c3-4e5b-a3cc-fdb0563c3e14" absoluteBounds="4, 3, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="f5d322f4-1f21-4663-8195-e416a7918b6e" LastKnownName="Sistema" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(3.72278779629057 : 2.60112344158839); (4.046875 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="eba879b7-f388-43d1-a097-c16257ed3cd7" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="174f43a1-cb9f-4cee-b6ab-be425308f753" />
+        <actorShapeMoniker Id="c6b953c9-24c3-4e5b-a3cc-fdb0563c3e14" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="a382ff30-9fbb-4fc9-92ce-72a63b22768f" absoluteBounds="7.875, 1.875, 1.875, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="4703b32c-0632-4f95-8938-8ae90fdb9516" LastKnownName="Editar dados do paciente" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(6.875 : 2.25); (7.875 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="2160b54b-0851-4902-9cd0-314d29c241c9" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="4437650e-d92f-4eff-bfe7-fb90d78348bf" />
+        <useCaseShapeMoniker Id="a382ff30-9fbb-4fc9-92ce-72a63b22768f" />
+      </nodes>
+    </includeConnector>
+    <useCaseAssociationConnector edgePoints="[(7.5 : 3.12139011580235); (8.2742068279654 : 2.55702357197868)]" fixedFrom="Caller" fixedTo="Caller" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="398ecea9-48b1-4fbf-80c5-703222ee979a" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="202adf22-4bd0-4fb8-a08e-d4f971272132" />
+        <useCaseShapeMoniker Id="a382ff30-9fbb-4fc9-92ce-72a63b22768f" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

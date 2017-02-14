@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f53e704c-46a5-45e6-b42c-d8b81fdb8efd" name="add_EHR" linkedPackageId="7ce92973-00a2-417c-ba7e-851f36111d39" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="cda9f1f2-33ac-4278-945c-c8be8973eb70" name="Atendente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2b09990c-97e3-4905-b6a8-fe69ff317a58" />
+        <targetEnds>
+          <association Id="47b9dd7f-c64c-4ddf-bf31-881d06aefa4c" isDerived="false" sourceEndRoleName="Atendente" targetEndRoleName="Autenticar usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="30c83104-4925-4f07-99f3-c1bbc9edc1ac" LastKnownName="Autenticar usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3d9ce101-de4c-4a5c-91b6-2f627df8b18c" name="Atendente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e89f66c5-82c5-411c-83c9-c230b65a588f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52dc1c02-8d7a-4046-b303-e79f390d2a9c" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6b92356d-2ff6-43c5-9ff1-468de297ffe5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="31d90f3e-7974-45d4-8c7c-5109fe25a2fc" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="baa62187-15b5-4142-8fe5-9c9945cad60f" name="Adicionar registro eletrônico de saúde" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c0524091-dee8-4486-a1d9-9d38aec99a17" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="30c83104-4925-4f07-99f3-c1bbc9edc1ac" name="Autenticar usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d6e0531c-5ab2-45bf-9907-9b98cbe04540" />
+        <targetEnds>
+          <association Id="93f643ec-8400-4993-8601-874bd79110be" isDerived="false" sourceEndRoleName="Autenticar usuário" targetEndRoleName="Sistema" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="7b80f21a-7689-44b4-9120-0ca0ed5f46e4" LastKnownName="Sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c657b93d-cb24-4d55-bbef-5b230da6934e" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="99e607e4-161b-4eb1-a692-4a60d0df38e1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="81e62762-6747-43b4-b48c-c5f917753b6b" name="Sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="01f769e8-2f1e-427e-956c-453afa9690e0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d6151466-36d4-4720-a6ce-576798a91daa" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="6b71d836-b2c9-4d2a-aa1e-44f6702bafa8">
+            <useCaseMoniker Id="baa62187-15b5-4142-8fe5-9c9945cad60f" LastKnownName="Adicionar registro eletrônico de saúde" />
+            <elementDefinition Id="2174aeae-b704-45d8-a47d-837b34f3e6cd" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="7b80f21a-7689-44b4-9120-0ca0ed5f46e4" name="Sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b96b542d-9fce-44a3-96ed-3056941c29cc" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="7ce92973-00a2-417c-ba7e-851f36111d39" name="EHRClinicalModelingProject">
+    <elementDefinition Id="79c4b29f-79c9-4c13-900e-51b0277837e5" />
+    <profileInstances>
+      <packageHasProfileInstances Id="96a8b82e-8b54-4049-8077-d9c0f131b995">
+        <profileInstance Id="9381d088-d043-4350-9f76-8898838aa2ee" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="dd658954-d0d5-4110-9f3d-b101b8a886ff">
+        <profileInstance Id="8bec7800-2a37-4d96-aba1-bc7fdf7f095c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

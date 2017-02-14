@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="buscar_dados_pressao_sanguinea">
+  <useCaseModelRootMoniker Id="6d9a3bb2-134e-4554-8cbb-18052d655a71" />
+  <nestedChildShapes>
+    <actorShape Id="1e9cc575-581e-44d6-9605-fc2613fc467d" absoluteBounds="8.5, 4.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="65a16cdc-09f5-421d-adc4-30c75c952f8d" LastKnownName="Paciente" />
+      <relativeChildShapes />
+    </actorShape>
+    <actorShape Id="fc064a53-b769-4782-83b1-71a51d2b6bed" absoluteBounds="3, 5.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="400157b0-746e-4979-8b12-9f4e76620b8f" LastKnownName="Médico" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="71355a46-593d-4d83-bf2d-1ea7cd259ddf" absoluteBounds="5.75, 4.125, 1.625, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="3665485e-5b61-46ff-95d5-ae476f7c5715" LastKnownName="Buscar paciente" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(8.5 : 4.5); (7.375 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="4afc0004-4449-40db-8007-54f8f6ef6294" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="1e9cc575-581e-44d6-9605-fc2613fc467d" />
+        <useCaseShapeMoniker Id="71355a46-593d-4d83-bf2d-1ea7cd259ddf" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="d204e8b1-fa91-4723-9f91-a2ff51681d3a" absoluteBounds="3.125, 4.125, 1.625, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="04d0eec4-fdd9-4285-ae7e-1891a80d2c95" LastKnownName="Autenticar usuário" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(4.75 : 4.5); (5.75 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="effe693d-82fd-4910-8ed9-33846cf7f414" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="d204e8b1-fa91-4723-9f91-a2ff51681d3a" />
+        <useCaseShapeMoniker Id="71355a46-593d-4d83-bf2d-1ea7cd259ddf" />
+      </nodes>
+    </includeConnector>
+    <useCaseAssociationConnector edgePoints="[(3.421875 : 5.25); (3.69176183572735 : 4.85743732985113)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="5be61354-d9d4-4a28-a8fd-f219317e0226" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="fc064a53-b769-4782-83b1-71a51d2b6bed" />
+        <useCaseShapeMoniker Id="d204e8b1-fa91-4723-9f91-a2ff51681d3a" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <actorShape Id="4ed4e44e-9a69-4b2c-9c50-d4eacd43042f" absoluteBounds="4.5, 5.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="b8f59f48-c924-44e1-aea1-c1b2ef70060b" LastKnownName="Sistema" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(4.22278779629057 : 4.85112344158839); (4.546875 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="abc0b837-1bf9-40fb-abb3-4f610361e074" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="d204e8b1-fa91-4723-9f91-a2ff51681d3a" />
+        <actorShapeMoniker Id="4ed4e44e-9a69-4b2c-9c50-d4eacd43042f" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="997f08eb-e333-4c18-816b-f036cfa68bf8" absoluteBounds="5.625, 5.375, 1.875, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="8603193d-773a-4215-adae-42c3ba180023" LastKnownName="buscar dados de pressão sanguinea" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(6.5625 : 4.875); (6.5625 : 5.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="aff49119-548b-416d-9804-43204a437623" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="71355a46-593d-4d83-bf2d-1ea7cd259ddf" />
+        <useCaseShapeMoniker Id="997f08eb-e333-4c18-816b-f036cfa68bf8" />
+      </nodes>
+    </includeConnector>
+    <useCaseAssociationConnector edgePoints="[(7.10012094784062 : 5.44278802980536); (8.5 : 4.64285714285714)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="6d99389c-5dc4-4f88-a21e-302025494f90" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="997f08eb-e333-4c18-816b-f036cfa68bf8" />
+        <actorShapeMoniker Id="1e9cc575-581e-44d6-9605-fc2613fc467d" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

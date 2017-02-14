@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="b3c68612-18aa-48e1-bbfa-095aee2551ab" name="editar_dados_paciente" linkedPackageId="e9eda6ff-e10f-4db7-9592-d023f4d24347" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="8f9af4cd-a8c2-4af1-b4df-0ce266dc644a">
+      <profileInstance Id="e26e8d31-0835-4b2d-a94d-211772646413" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6ee67bd8-9544-4a95-87db-6236fccbd5b8">
+      <profileInstance Id="02d94d73-6503-40a8-a260-9b3e36553699" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="cd48e99f-d796-466f-8bfc-a5cde5030d04" name="Paciente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a19c7e3b-0721-4442-a1ad-6c04ded9c1e9" />
+        <targetEnds>
+          <association Id="b2de0794-7044-47e5-a671-339fabbd124c" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Ativar o usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="685e1067-83ee-4e2c-b934-6018c3aa27af" LastKnownName="Listar paciente" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eaca66a5-1da5-4c6c-ba76-b9874d9d559f" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c97f1d8f-3eaf-4978-a046-8fb13fb46a01" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="467e5337-9de8-49b9-9ac0-fa952225e24c" name="Ativar o usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f3ee6661-9484-47f4-83bb-469e67c4857b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ae069c19-8547-4568-b418-69a767e311ec" />
+          </association>
+          <association Id="398ecea9-48b1-4fbf-80c5-703222ee979a" isDerived="false" sourceEndRoleName="Paciente" targetEndRoleName="Editar dados do paciente" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4703b32c-0632-4f95-8938-8ae90fdb9516" LastKnownName="Editar dados do paciente" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a369638-a26f-48de-9d8f-f1f731faa049" name="Paciente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e28b69d7-cc1b-4f31-b6c9-f154d5418d6a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ca623901-45d6-4272-ae74-3c067bb71508" name="Editar dados do paciente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="51f69524-61c2-463d-a30a-3c5414aa95b0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f456d537-ea74-49bc-ac09-09f2d0bcdbc2" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="04039556-c5f9-4465-a4fb-a6749e729e2f" name="Atendente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8376cc01-69e0-4651-ab27-5bbe9a901daa" />
+        <targetEnds>
+          <association Id="c75cc4f5-1bba-46c2-905a-222d067940fc" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Autenticar usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="787d289f-4e41-4fed-a713-ade30870e8fe" LastKnownName="Autenticar usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bbf57c59-4921-468b-b7a3-fb0251bd4ad2" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2fabff86-2af9-4357-a172-bc64fab8a6b1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f2bb4489-ec54-44d2-8ad5-e32fa7ac6d96" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ad76ea8e-e0cf-4915-a407-624b81f0fc53" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a9a3524d-1612-4f7c-bd5e-06057c88ec61" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="685e1067-83ee-4e2c-b934-6018c3aa27af" name="Listar paciente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="961244a7-2bb9-4f17-b143-1a1f2214eff2" />
+        <additions>
+          <include Id="2160b54b-0851-4902-9cd0-314d29c241c9">
+            <useCaseMoniker Id="4703b32c-0632-4f95-8938-8ae90fdb9516" LastKnownName="Editar dados do paciente" />
+            <elementDefinition Id="ec9f0ff1-1799-4ff2-87b6-ab0d4e00e88e" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="787d289f-4e41-4fed-a713-ade30870e8fe" name="Autenticar usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1d85b5a6-dfd1-48bd-8792-cfda8222b3e3" />
+        <targetEnds>
+          <association Id="eba879b7-f388-43d1-a097-c16257ed3cd7" isDerived="false" sourceEndRoleName="Autenticar usuário" targetEndRoleName="Sistema" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="f5d322f4-1f21-4663-8195-e416a7918b6e" LastKnownName="Sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="883a6c84-9d88-4c61-98c7-25abf03bd988" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7483b754-49fe-40e3-9057-24e721bded9a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="561de966-903e-451a-b77b-48d2d23377bf" name="Sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e0f79216-3805-4d9c-a1ba-c062c25ce546" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b1feecc0-a1f1-41e9-bcbd-41755a88bf0d" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="2fbcd387-6113-4970-8e1a-00c093e75b67">
+            <useCaseMoniker Id="685e1067-83ee-4e2c-b934-6018c3aa27af" LastKnownName="Listar paciente" />
+            <elementDefinition Id="8115c948-204f-4a61-81f2-74c0d1e68195" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="f5d322f4-1f21-4663-8195-e416a7918b6e" name="Sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fcd12a7e-49c0-4061-bc6d-a2ac49212bc9" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4703b32c-0632-4f95-8938-8ae90fdb9516" name="Editar dados do paciente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b1ac4849-d3c6-45e6-a559-7b624516bf30" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="e9eda6ff-e10f-4db7-9592-d023f4d24347" name="EHRClinicalModelingProject">
+    <elementDefinition Id="79c4b29f-79c9-4c13-900e-51b0277837e5" />
+  </package>
+</useCaseModelRoot>

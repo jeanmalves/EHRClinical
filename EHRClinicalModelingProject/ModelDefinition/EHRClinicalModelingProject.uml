@@ -1,0 +1,2987 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="79c4b29f-79c9-4c13-900e-51b0277837e5"
+  name="EHRClinicalModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="5157c056-ca14-40bd-891d-34f4c6f05ba9"
+        name="Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="f494fc98-fe09-4295-a683-267b442ae4a9"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="be2f656e-4744-495e-b03f-031c5fd22eec"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8d870e19-07de-4e43-a87f-b20e26d08f26"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="35e1375e-d3a2-49df-90c5-cf11dbe89a06"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="2fd1b32a-b08b-42e8-9b35-826f276e5fac"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="be2f656e-4744-495e-b03f-031c5fd22eec"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="3ec71d91-5b78-4d96-8da4-ba228ffac63a"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="2fd1b32a-b08b-42e8-9b35-826f276e5fac"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="14cdc878-b34a-4805-91b8-5869da97e255"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="207e5199-a3bb-4a77-ade9-e613dfbb7db4"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="96e61619-9d7a-4772-82dd-b300145bfefb"
+        name="Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="70fc73fe-d6c3-4e88-a7ef-71b52fda26d7"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8dc58809-9368-4a6b-b55f-6f707667b742"
+              LastKnownName="Ativar o usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="723543af-a7dd-4a6d-baeb-41e0e66d0353"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9e6c83ec-bee5-4d84-a498-8eca8819f8d1"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="ffc59476-3be0-4b86-89a5-174c794fb152"
+        name="Administrador"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="372fa1de-068d-49f8-9637-67a5a5a6a9d4"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar no sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a0bdc686-cffa-457a-a476-662e68cd8059"
+              LastKnownName="Autenticar no sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d78571e3-1933-435e-a982-847bc98f512f"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="54443eea-580a-41b7-a5a1-a7ed970bb027"
+                  name="Autenticar no sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="34a8ecb6-4d1d-418d-9bcc-a1b8aae1ef82"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c77e6e5c-f945-41a8-87bb-df20430a4005"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3c90e9e9-8a07-4902-83ff-e71063a34c60"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="496bea6a-d16c-4b14-b701-c947eddb47be"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8dc58809-9368-4a6b-b55f-6f707667b742"
+        name="Ativar o usuário"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="f9e9b528-1795-4a6d-83a4-fc350a4763ac"
+        name="Subsystem1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="8b4ffc80-7913-49b8-9a15-37e216a4156b"
+        name="autenticar_usuario.usecasediagram"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="EHRClinicalModelingProject\autenticar_usuario.usecasediagram" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a0bdc686-cffa-457a-a476-662e68cd8059"
+        name="Autenticar no sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="46d01ac9-8da0-424e-83ce-1376e7356c10"
+        name="autenticar_usuario"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="EHRClinicalModelingProject\autenticar_usuario.usecasediagram" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c77e6e5c-f945-41a8-87bb-df20430a4005"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ed6a9f99-b784-469d-af57-c993f36cca94"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="8a68ebff-2799-4803-991f-099c38988104"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b576b9af-6c44-4247-bb37-fd76376eaedf"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0be987a0-ca19-44e7-91a4-87d8c17fb18c"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="7bc4d179-a548-4b12-90c3-14a2a3b1c559">
+            <useCaseMoniker
+              Id="8dc58809-9368-4a6b-b55f-6f707667b742"
+              LastKnownName="Ativar o usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="8a68ebff-2799-4803-991f-099c38988104"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="03e27fb5-e808-4966-9189-a71e78f04b02"
+        name="Atendente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="068b37ee-ea8e-4705-a64b-dc6246eec559"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e9eb1dce-e3bd-4dbe-b69f-5b10f8754386"
+              LastKnownName="Cadastrar atendente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e0fd74a0-ac08-4b54-a9e1-e073c8954fce"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="126e6320-07de-4d2c-882c-607c548f8ae2"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="c18f1fab-1320-47f8-a0b0-f6556605a8e9"
+        name="Administrador"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="2f977aa8-edee-48ef-9b7f-e3cc125fec76"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="90c586ba-2060-45f4-aeec-945aa187af59"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d3053dda-4bfd-4ea8-8dcd-c4a4bf6f8ab1"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c1d64d39-c065-4c89-95e8-5120cbec8bd8"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e9eb1dce-e3bd-4dbe-b69f-5b10f8754386"
+        name="Cadastrar atendente"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="90c586ba-2060-45f4-aeec-945aa187af59"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="899102cf-26e7-473c-bd96-924289e72219"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="2b78dc0c-c5aa-491d-b50a-4f16cd475328"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cfbd9e23-2c8c-4a31-9cb5-33dc30a38279"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="853d98c7-cb14-463f-b49d-bee10d2845a2"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="a33b6abd-e744-4fed-993c-477307072e65">
+            <useCaseMoniker
+              Id="e9eb1dce-e3bd-4dbe-b69f-5b10f8754386"
+              LastKnownName="Cadastrar atendente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="2b78dc0c-c5aa-491d-b50a-4f16cd475328"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="042951ba-8b83-4d41-91b9-a49e0ff4a502"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="9f008477-7c6c-4545-9615-3e1f5e7284d4"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d6589600-fb85-44fd-b497-ecfd87360cdd"
+              LastKnownName="Cadastrar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dd877e33-a919-41db-9328-bde7bec73fb2"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eaa2485d-4b58-4568-a36a-e1659c541384"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="4734bef2-9c58-48b3-9b06-fd51017259f3"
+        name="Atendente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="d1a3d882-557d-4cd0-b23b-004ce3ccf545"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c175509d-fb70-496a-9465-94998a3f9b76"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9988c6a3-f67a-462c-aad1-65f2c486393c"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5d165f1b-baef-4974-a863-a02dde32f59d"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d6589600-fb85-44fd-b497-ecfd87360cdd"
+        name="Cadastrar paciente"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c175509d-fb70-496a-9465-94998a3f9b76"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="2e0770a7-03a6-4d90-aea5-6f806aab98fe"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="e602393b-2ef5-4c73-92e5-8351bfebd37a"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1615ed3f-e305-4078-b295-1378df7e738b"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6d2d429b-96ed-4845-8e61-9d60cb870a5f"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="0c4055f7-eaf6-4fae-9c2b-9ab7d1aed53b">
+            <useCaseMoniker
+              Id="d6589600-fb85-44fd-b497-ecfd87360cdd"
+              LastKnownName="Cadastrar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="e602393b-2ef5-4c73-92e5-8351bfebd37a"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="e04f04eb-3b61-4aaa-9d24-41b2d0ed7d8b"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="d9eb38a4-ce6d-4c5b-8739-0bcfbdd4cac8"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="2a62221e-7564-4bca-a692-0fdc13a9b08e"
+              LastKnownName="Listar pacientes"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d1475c66-19f8-485d-b16f-3033914064ae"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1a50f42a-0497-4b0b-a09a-5067b9c18bd5"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="a1164d00-0563-4cd0-8e55-d840708a6be6"
+        name="Atendente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="9072eb70-c089-419e-9101-23dabf5b3a72"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fbcf84c3-bf8b-43bb-b0b1-08e3a34c4e6a"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="685c0362-7c87-4ec6-af24-e322e60fd11f"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f8fde39a-69f0-43a2-89ac-97945e51b942"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2a62221e-7564-4bca-a692-0fdc13a9b08e"
+        name="Listar pacientes"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fbcf84c3-bf8b-43bb-b0b1-08e3a34c4e6a"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e362fbda-3c0c-4241-965c-2b8c03a2bd78"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="77daa102-9538-446c-bccd-04effbcfe55f"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="177f73be-a8fc-4f35-8106-a266f2e90991"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f35a1211-b541-45d1-9c45-7c0e057d47f2"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="a16b4493-bacc-45dd-a3ae-66f0d693610f">
+            <useCaseMoniker
+              Id="2a62221e-7564-4bca-a692-0fdc13a9b08e"
+              LastKnownName="Listar pacientes"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="77daa102-9538-446c-bccd-04effbcfe55f"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="a19c7e3b-0721-4442-a1ad-6c04ded9c1e9"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ae069c19-8547-4568-b418-69a767e311ec"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="961244a7-2bb9-4f17-b143-1a1f2214eff2"
+              LastKnownName="Listar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c97f1d8f-3eaf-4978-a046-8fb13fb46a01"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f3ee6661-9484-47f4-83bb-469e67c4857b"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f456d537-ea74-49bc-ac09-09f2d0bcdbc2"
+            isDerived="false"
+            sourceEndRoleName="Paciente"
+            targetEndRoleName="Editar dados do paciente"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b1ac4849-d3c6-45e6-a559-7b624516bf30"
+              LastKnownName="Editar dados do paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e28b69d7-cc1b-4f31-b6c9-f154d5418d6a"
+                  name="Paciente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="51f69524-61c2-463d-a30a-3c5414aa95b0"
+                  name="Editar dados do paciente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="8376cc01-69e0-4651-ab27-5bbe9a901daa"
+        name="Atendente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a9a3524d-1612-4f7c-bd5e-06057c88ec61"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1d85b5a6-dfd1-48bd-8792-cfda8222b3e3"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2fabff86-2af9-4357-a172-bc64fab8a6b1"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ad76ea8e-e0cf-4915-a407-624b81f0fc53"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="961244a7-2bb9-4f17-b143-1a1f2214eff2"
+        name="Listar paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="ec9f0ff1-1799-4ff2-87b6-ab0d4e00e88e">
+            <useCaseMoniker
+              Id="b1ac4849-d3c6-45e6-a559-7b624516bf30"
+              LastKnownName="Editar dados do paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1d85b5a6-dfd1-48bd-8792-cfda8222b3e3"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="b1feecc0-a1f1-41e9-bcbd-41755a88bf0d"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="fcd12a7e-49c0-4061-bc6d-a2ac49212bc9"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7483b754-49fe-40e3-9057-24e721bded9a"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e0f79216-3805-4d9c-a1ba-c062c25ce546"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="8115c948-204f-4a61-81f2-74c0d1e68195">
+            <useCaseMoniker
+              Id="961244a7-2bb9-4f17-b143-1a1f2214eff2"
+              LastKnownName="Listar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="fcd12a7e-49c0-4061-bc6d-a2ac49212bc9"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b1ac4849-d3c6-45e6-a559-7b624516bf30"
+        name="Editar dados do paciente"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="39625187-6ec6-4659-9a7b-6d8188572db2"
+        name="Médico"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e288a681-21bb-4f1a-aef3-2a967a9e7ade"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="13d621fb-6668-44b1-aec0-d72a3da23bab"
+              LastKnownName="Cadastrar médico"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bb517a31-5bb2-4031-83ed-d00658ea9577"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b42442cc-a6bc-4478-b80a-7d33213c66d4"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="aa3a540d-e6b6-4393-b35a-7d13a94368c8"
+        name="Administrador"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e1c114ae-221b-43cf-adf7-2f47408da951"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="86961559-3cfc-4b4e-9275-fe7597552c2f"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a8621bbb-bc05-4e3e-9ba9-c21e189bce00"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8bfa10f3-7906-443d-9215-362500144137"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="13d621fb-6668-44b1-aec0-d72a3da23bab"
+        name="Cadastrar médico"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="86961559-3cfc-4b4e-9275-fe7597552c2f"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="94c4b705-e41f-4ed7-b066-848cb578b58c"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="294c4ddd-c8ab-4a3e-abb8-986566750756"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6256e1a6-d0bc-41a0-a116-db44538b44b8"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c91bb91a-bacc-4a9c-ad8b-83f094f30013"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="1cae6ad8-9558-46e4-8236-b8696443c1b2">
+            <useCaseMoniker
+              Id="13d621fb-6668-44b1-aec0-d72a3da23bab"
+              LastKnownName="Cadastrar médico"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="294c4ddd-c8ab-4a3e-abb8-986566750756"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="dacf737a-fce4-4b50-b272-802098956a64"
+        name="Paciente1"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="2d01c1e9-c453-4c4d-9de2-08c9bd596240"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c0524091-dee8-4486-a1d9-9d38aec99a17"
+              LastKnownName="Adicionar registro eletrônico de saúde"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="de741603-a718-4585-95e4-33940dde3fa4"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="df196873-3da8-46f6-982a-167795f8e749"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="2b09990c-97e3-4905-b6a8-fe69ff317a58"
+        name="Atendente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a3041768-a923-4ece-b7ba-ef80ca139bcb"
+            isDerived="false"
+            sourceEndRoleName="Atendente"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d6e0531c-5ab2-45bf-9907-9b98cbe04540"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="32b35a8a-6ccc-4708-9d14-0bac00d26852"
+                  name="Atendente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="131d21bc-e820-46f2-bccd-2d207d2ef4e7"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="31d90f3e-7974-45d4-8c7c-5109fe25a2fc"
+            isDerived="false"
+            sourceEndRoleName="Atendente"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d6e0531c-5ab2-45bf-9907-9b98cbe04540"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e89f66c5-82c5-411c-83c9-c230b65a588f"
+                  name="Atendente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6b92356d-2ff6-43c5-9ff1-468de297ffe5"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c0524091-dee8-4486-a1d9-9d38aec99a17"
+        name="Adicionar registro eletrônico de saúde"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d6e0531c-5ab2-45bf-9907-9b98cbe04540"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="d6151466-36d4-4720-a6ce-576798a91daa"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="b96b542d-9fce-44a3-96ed-3056941c29cc"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="99e607e4-161b-4eb1-a692-4a60d0df38e1"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="01f769e8-2f1e-427e-956c-453afa9690e0"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="2174aeae-b704-45d8-a47d-837b34f3e6cd">
+            <useCaseMoniker
+              Id="c0524091-dee8-4486-a1d9-9d38aec99a17"
+              LastKnownName="Adicionar registro eletrônico de saúde"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="b96b542d-9fce-44a3-96ed-3056941c29cc"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="e2c7d44f-3c51-466e-9ff0-bb7329a26a5c"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="38439479-0011-4095-b60a-2f2f383841cc"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a0abe395-8360-4408-b381-a60b57df29d2"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cdfd7a1b-c743-4439-ba73-3d85a62775d4"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4987e586-ccd3-4622-b77c-174f06fda77a"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="87786183-015c-4698-9eab-a5d1346f5267"
+        name="Atendente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="c9dd358e-1d0d-47e7-a448-01338fdfad51"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ed0e5f0f-abcc-454a-b7aa-91caf52e7479"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="81b5ac9b-4ae0-4fa3-bcb2-6ddafbd55b6a"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fce260cf-a726-4a41-86cb-e3bb881d0c3b"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a0abe395-8360-4408-b381-a60b57df29d2"
+        name="Buscar paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="09840d1d-1745-456f-b654-ee0f34a53028">
+            <useCaseMoniker
+              Id="9fb23a61-f314-4896-b34a-7ccc8e3960ac"
+              LastKnownName="Atribuir registro eletrônico de saúde"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ed0e5f0f-abcc-454a-b7aa-91caf52e7479"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="edc49eb3-e4a2-4c67-82d3-1371e49f6057"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="5360d7f3-2644-45de-a1b2-fbab4b4d0ef5"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2af5ed1-49e5-4968-82f9-47048dab2857"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="af2f6504-37d8-4531-a8a8-5d34ed873aff"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="7d674267-a17d-450c-b7d0-616eac70b99c">
+            <useCaseMoniker
+              Id="a0abe395-8360-4408-b381-a60b57df29d2"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="5360d7f3-2644-45de-a1b2-fbab4b4d0ef5"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9fb23a61-f314-4896-b34a-7ccc8e3960ac"
+        name="Atribuir registro eletrônico de saúde"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="87e1578c-5035-4437-95ba-9ba0dfb8b42d"
+            isDerived="false"
+            sourceEndRoleName="Atribuir registro eletrônico de saúde"
+            targetEndRoleName="Paciente"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="e2c7d44f-3c51-466e-9ff0-bb7329a26a5c"
+              LastKnownName="Paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9cdb0612-b29e-4a18-8d21-cdd362336197"
+                  name="Atribuir registro eletrônico de saúde"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="75190a95-2936-4c35-a8e3-a9c736ff6d6e"
+                  name="Paciente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="c2a79d12-f6a7-4292-ae56-2527f8323ce5"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="1490fa48-5768-4056-8c97-d7da95d52bcf"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="507f77f0-f202-4564-abd0-7170f4259344"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d5c67904-fd28-44d9-8683-bcd59206900b"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="67f5040c-19bb-4ca6-8245-676da78cb5be"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="8849dad8-6835-4996-9b89-73f7c84dd819"
+        name="Médico"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="3c32bb77-82c4-48da-b492-28b6a27b6c64"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="2872aa9d-354a-4d9e-84a8-7d6de25f8f3a"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e39b6e8f-8faa-48dc-bf8f-058f00bfcb2a"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9081105c-607f-45c4-86f6-2143c976d832"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="507f77f0-f202-4564-abd0-7170f4259344"
+        name="Buscar paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="387f5d12-aeb8-41a3-b176-be8d13ec9228">
+            <useCaseMoniker
+              Id="06970c91-485b-4e3f-83f9-2b10f4a01180"
+              LastKnownName="atribuir dados de temperatura corporal"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2872aa9d-354a-4d9e-84a8-7d6de25f8f3a"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="1ad9429a-cd73-4502-b3dd-1bb81648763a"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="d87fcd36-f613-4686-88e3-36e881e07ed7"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="813a31fc-8738-4b56-9b6b-2ff51da410a3"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2829b91c-5786-4d1b-bded-b488797b955c"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="7090dd0e-33be-4764-855b-07a07f3d31b7">
+            <useCaseMoniker
+              Id="507f77f0-f202-4564-abd0-7170f4259344"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="d87fcd36-f613-4686-88e3-36e881e07ed7"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="06970c91-485b-4e3f-83f9-2b10f4a01180"
+        name="atribuir dados de temperatura corporal"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="157dff8b-1968-47af-aaac-95a403796f46"
+            isDerived="false"
+            sourceEndRoleName="atribuir dados de temperatura corporal"
+            targetEndRoleName="Paciente"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="c2a79d12-f6a7-4292-ae56-2527f8323ce5"
+              LastKnownName="Paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fcf5f738-f302-4f1b-89e2-b9fb71026b4e"
+                  name="atribuir dados de temperatura corporal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5ea25c75-0aec-439a-b7c9-eb4663a88531"
+                  name="Paciente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="f17fc067-565c-453e-8924-f9143f765c8f"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="87c8098b-85f1-4e0c-abd8-718ec406b365"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="72a8a9e6-79ea-4f04-958c-39e5c592fdae"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dc24e0e8-020b-497a-96d6-e76dd43a16ac"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="39e02712-8b0d-418d-8f62-f2ffa119c782"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="c5c657fe-f4dc-4a8d-b4de-657189767807"
+        name="Médico"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="adcba8ae-f6e7-44e3-9e11-d2889ff3462e"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="490cd3ef-78da-44f8-b6a5-36f42f4b1f5e"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a90b986a-8fa4-483a-b378-d364af27b297"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="527d41b4-cfda-4c75-9e3c-a1019b564be4"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="72a8a9e6-79ea-4f04-958c-39e5c592fdae"
+        name="Buscar paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="74c2ead0-eaee-45d1-af10-1362a3eb480c">
+            <useCaseMoniker
+              Id="b3881639-4dbc-4186-8402-29f092ff20b3"
+              LastKnownName="atribuir dados de pressão sanguinea"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="490cd3ef-78da-44f8-b6a5-36f42f4b1f5e"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="aed42a4f-9c11-4658-b135-8dd1fe8b8928"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="8c2130e8-5af5-4917-ac63-87318163eaa9"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="541b58c6-9cc5-4147-9f31-98a4e39401dc"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f8e49e1b-5a6c-4602-9ce6-e5d735b70de0"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="72c46b8d-98dd-418b-a789-a0b75e14c08c">
+            <useCaseMoniker
+              Id="72a8a9e6-79ea-4f04-958c-39e5c592fdae"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="8c2130e8-5af5-4917-ac63-87318163eaa9"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b3881639-4dbc-4186-8402-29f092ff20b3"
+        name="atribuir dados de pressão sanguinea"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="605e1040-d9e4-44e9-96c0-6877859a1ec5"
+            isDerived="false"
+            sourceEndRoleName="atribuir dados de temperatura corporal"
+            targetEndRoleName="Paciente"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="f17fc067-565c-453e-8924-f9143f765c8f"
+              LastKnownName="Paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b342db56-afcd-46d9-9877-9bfa10150118"
+                  name="atribuir dados de temperatura corporal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f67a03ba-3bdb-4b05-9293-46658f5636af"
+                  name="Paciente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="5e8646b3-944e-4a8f-82c4-657698e14b97"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="8e32a529-9f9f-46ae-987a-3f61c1b9a4be"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="7c4278aa-b015-443e-b10f-1d74b481626b"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ee7cdd91-fd73-4270-a7c2-332ca0a96032"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c25e5f04-4069-4355-8646-a0122f640fb7"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="6077118f-ac39-42ae-b956-b7214f11c64c"
+        name="Médico"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="82e6e349-c529-4771-89dd-4a92279a63bc"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e2e1eeb4-224f-4b69-8665-4473d23103bd"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="587b25f9-5786-4ac6-b382-5b1e8112c033"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="231884c6-8681-47b1-ad0c-72e62e08cc8b"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7c4278aa-b015-443e-b10f-1d74b481626b"
+        name="Buscar paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="e14eaba2-6875-4cbe-afca-0792eaabc5d7">
+            <useCaseMoniker
+              Id="2cb5641a-5686-4c89-8a75-73867d27a4e0"
+              LastKnownName="buscar dados de temperatura corporal"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e2e1eeb4-224f-4b69-8665-4473d23103bd"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e2a86fbd-1e24-41aa-b289-24a9e75ae71b"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="9fb6403d-dbb8-4d2e-95be-e47c82f3b311"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="64297066-7671-4984-8206-3aeb544bec44"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7135e7f9-a1fe-4464-a146-b193497576ea"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="01347d5e-918c-42f9-a710-78c6c00ac3a3">
+            <useCaseMoniker
+              Id="7c4278aa-b015-443e-b10f-1d74b481626b"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="9fb6403d-dbb8-4d2e-95be-e47c82f3b311"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2cb5641a-5686-4c89-8a75-73867d27a4e0"
+        name="buscar dados de temperatura corporal"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="99f84d8c-0150-4f5d-8630-2a42a653d226"
+            isDerived="false"
+            sourceEndRoleName="atribuir dados de temperatura corporal"
+            targetEndRoleName="Paciente"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="5e8646b3-944e-4a8f-82c4-657698e14b97"
+              LastKnownName="Paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2ec3846c-7b68-4069-85eb-ddb790133f56"
+                  name="atribuir dados de temperatura corporal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="afd1eeee-bc6a-4ecd-8da0-d46fafa3bdda"
+                  name="Paciente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="d6a8d8ea-4e19-4ed4-9210-026540e12575"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="2616c95f-5bf2-4691-a716-4b0276524ef6"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fb16b3bc-5517-4b8d-9288-70771d63acdf"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f5a67955-e836-4f3c-9e9c-e4f1c7e9b388"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="699816d2-0986-404f-9e9a-dfa9290f0270"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="bd15d31e-7937-4ebe-b1a2-a30844ae6200"
+        name="Médico"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="464e0a45-7231-4a07-a7a8-2a2a097c1dbb"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9475365d-4ee7-4a27-aae2-da2aacff0abc"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="302fec5f-b797-468f-8494-32c5b20ee6da"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2f8db4eb-42cc-4d51-8288-9adc60074b4a"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fb16b3bc-5517-4b8d-9288-70771d63acdf"
+        name="Buscar paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="a50dff12-d93d-4c92-a62b-a5b125a7dce0">
+            <useCaseMoniker
+              Id="9b31939b-11a7-45e3-8fbe-735b619626d0"
+              LastKnownName="buscar dados de pressão sanguinea"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9475365d-4ee7-4a27-aae2-da2aacff0abc"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e27e38c3-64ab-4b80-9f89-f843e6050c4f"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="da96d30d-6bb6-4b2b-b0b0-f0d7d5c80014"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fed924d7-b878-4eb6-a7a4-dfb7c8c5539a"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="05dbc250-c436-4d58-87c0-85416ce30cd1"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="12494eb0-e55d-48ca-8ea8-dc907293b172">
+            <useCaseMoniker
+              Id="fb16b3bc-5517-4b8d-9288-70771d63acdf"
+              LastKnownName="Buscar paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="da96d30d-6bb6-4b2b-b0b0-f0d7d5c80014"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9b31939b-11a7-45e3-8fbe-735b619626d0"
+        name="buscar dados de pressão sanguinea"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="08f3ff54-b312-4396-9cf2-a5f65f9e82b3"
+            isDerived="false"
+            sourceEndRoleName="atribuir dados de temperatura corporal"
+            targetEndRoleName="Paciente"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="d6a8d8ea-4e19-4ed4-9210-026540e12575"
+              LastKnownName="Paciente"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="94e19d86-0754-4fc1-92b6-88993467f39c"
+                  name="atribuir dados de temperatura corporal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="285744f4-2e2b-4260-864f-050096909aa4"
+                  name="Paciente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="78c1d3b9-2a56-4a8b-9819-cab56f36a411"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="753e200c-91ab-41b4-9332-ff4e52543669"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="436a90bb-9e13-41c1-b5fc-62d34d103929"
+              LastKnownName="Buscar paciente pelo registro eletrônico de saúde"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6253fc1c-c7c7-4e35-be3a-44eb3d5e60fc"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="922319b3-e86f-4cd2-8468-8156a690ddb1"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="6d6aecec-5a6b-40c4-b4b7-a5bfe7642093"
+        name="Atendente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ae47d987-066f-40ec-a460-3e0127472dda"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="07569ec2-4966-4fe1-ae43-07bfce4eef4e"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d435615c-a543-4edc-a197-0beb72234974"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="08410a73-366a-4f7a-a8ff-7b92122d9e93"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="436a90bb-9e13-41c1-b5fc-62d34d103929"
+        name="Buscar paciente pelo registro eletrônico de saúde"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="07569ec2-4966-4fe1-ae43-07bfce4eef4e"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="120f155c-e4dd-4883-bb6e-67604fc3d09c"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="5bc75c4c-24cb-488d-8815-9c06431411d0"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="453737a8-58dd-4d4b-b136-cff2e120bbd8"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="70e09109-901a-47d2-ab1b-f85aa0aefa5e"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="d88880e9-3943-4677-877c-15623cbf44ce">
+            <useCaseMoniker
+              Id="436a90bb-9e13-41c1-b5fc-62d34d103929"
+              LastKnownName="Buscar paciente pelo registro eletrônico de saúde"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="5bc75c4c-24cb-488d-8815-9c06431411d0"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="a31dfdde-6bbe-4b4e-8fb6-3756efb99f95"
+        name="Paciente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="c8ebc5f2-3571-49ce-a73e-05f366a01701"
+            isDerived="false"
+            sourceEndRoleName="Usuário"
+            targetEndRoleName="Ativar o usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b8339039-ba96-44c0-b96c-687cd3278eaa"
+              LastKnownName="Buscar paciente pelo nome"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cac762d9-1510-47f7-8864-ecba98f31337"
+                  name="Usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fbe01ed4-5d6b-440d-8f1a-30ebc0064294"
+                  name="Ativar o usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="b2a2b999-4f34-460e-9d86-d7046e185045"
+        name="Atendente"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="530cc59a-da8b-499e-9a03-962248256e9c"
+            isDerived="false"
+            sourceEndRoleName="Administrador"
+            targetEndRoleName="Autenticar usuário"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="2fc28a83-b834-4a39-8228-01f01b82552d"
+              LastKnownName="Autenticar usuário"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e6eed4aa-13a9-4406-9f5b-0b7f93c36b4a"
+                  name="Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="811c2b15-0d26-4c49-91b8-7f3a0ed150e2"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b8339039-ba96-44c0-b96c-687cd3278eaa"
+        name="Buscar paciente pelo nome"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2fc28a83-b834-4a39-8228-01f01b82552d"
+        name="Autenticar usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="23e9cdfe-5c1f-4787-8a63-6686971c1938"
+            isDerived="false"
+            sourceEndRoleName="Autenticar usuário"
+            targetEndRoleName="Sistema"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="d111b158-6bed-4f33-b866-cb9970f759d3"
+              LastKnownName="Sistema"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0027efc7-4fc6-4b83-a35f-6e6a6e0051aa"
+                  name="Autenticar usuário"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a55d09e2-7d09-4b55-86ee-a78fce79d31b"
+                  name="Sistema"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="33330315-2c16-49aa-a8a5-863e45925177">
+            <useCaseMoniker
+              Id="b8339039-ba96-44c0-b96c-687cd3278eaa"
+              LastKnownName="Buscar paciente pelo nome"
+              LastKnownLocation="EHRClinicalModelingProject.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="d111b158-6bed-4f33-b866-cb9970f759d3"
+        name="Sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

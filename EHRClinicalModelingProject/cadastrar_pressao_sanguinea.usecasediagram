@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="00d3c68d-2e4e-4561-a912-1bdc9981e863" name="cadastrar_pressao_sanguinea" linkedPackageId="32365883-2b55-43bc-81e5-7697f1f4400b" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="62699bee-87b3-4da4-ae89-aba27d62ba28">
+      <profileInstance Id="c9ca023b-75de-49cd-8eb4-e930517da4d1" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3ace74b7-0fba-4a5e-afb2-589825e706c8">
+      <profileInstance Id="27e073e4-3f87-4698-bf77-08959ea1afa1" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="02227a75-2ddf-4026-9ae1-9a8dcb92d9de" name="Paciente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f17fc067-565c-453e-8924-f9143f765c8f" />
+        <targetEnds>
+          <association Id="1444ad14-56d8-47c3-9144-ed83458966a5" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Ativar o usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="cfc00855-2906-434d-8379-a7a13a97c454" LastKnownName="Buscar paciente" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4d0fa149-5a44-46e4-a33b-99b4a2c59d72" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dc24e0e8-020b-497a-96d6-e76dd43a16ac" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8ef2a107-bf98-4ede-9b51-4e700ddbdefe" name="Ativar o usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="39e02712-8b0d-418d-8f62-f2ffa119c782" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="87c8098b-85f1-4e0c-abd8-718ec406b365" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="927352f7-bd9b-4125-ad8c-e7a746be5fb0" name="Médico" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c5c657fe-f4dc-4a8d-b4de-657189767807" />
+        <targetEnds>
+          <association Id="246a7e9b-abb2-4857-b556-4975f4476b0b" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Autenticar usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e16d31b9-70af-427a-8d12-e9bb686515b0" LastKnownName="Autenticar usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="646bb76a-7be0-4cca-832f-b44412f5a8f7" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a90b986a-8fa4-483a-b378-d364af27b297" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="31db1717-0589-420c-acea-7049c55e0742" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="527d41b4-cfda-4c75-9e3c-a1019b564be4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="adcba8ae-f6e7-44e3-9e11-d2889ff3462e" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="cfc00855-2906-434d-8379-a7a13a97c454" name="Buscar paciente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="72a8a9e6-79ea-4f04-958c-39e5c592fdae" />
+        <additions>
+          <include Id="cc4b7637-35b6-46a7-8233-3afa86ef933e">
+            <useCaseMoniker Id="1925aa72-cde4-41fb-af31-7bc124dd0e87" LastKnownName="atribuir dados de pressão sanguinea" />
+            <elementDefinition Id="74c2ead0-eaee-45d1-af10-1362a3eb480c" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e16d31b9-70af-427a-8d12-e9bb686515b0" name="Autenticar usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="490cd3ef-78da-44f8-b6a5-36f42f4b1f5e" />
+        <targetEnds>
+          <association Id="fa2e25f4-72c4-43ad-9a5b-87b2cc0291cf" isDerived="false" sourceEndRoleName="Autenticar usuário" targetEndRoleName="Sistema" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="f705a9ca-acf4-4ad2-846f-6291b23caa78" LastKnownName="Sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ec06dbc7-ee40-4eb9-84a2-8a2e41cc44a8" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="541b58c6-9cc5-4147-9f31-98a4e39401dc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fdb81694-02d5-4398-ad1c-6dbe9ee91f4a" name="Sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f8e49e1b-5a6c-4602-9ce6-e5d735b70de0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="aed42a4f-9c11-4658-b135-8dd1fe8b8928" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="a04121b0-397a-459f-9277-30cc0a9bc758">
+            <useCaseMoniker Id="cfc00855-2906-434d-8379-a7a13a97c454" LastKnownName="Buscar paciente" />
+            <elementDefinition Id="72c46b8d-98dd-418b-a789-a0b75e14c08c" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="f705a9ca-acf4-4ad2-846f-6291b23caa78" name="Sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8c2130e8-5af5-4917-ac63-87318163eaa9" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1925aa72-cde4-41fb-af31-7bc124dd0e87" name="atribuir dados de pressão sanguinea" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b3881639-4dbc-4186-8402-29f092ff20b3" />
+        <targetEnds>
+          <association Id="89bceec8-5e5e-4eb3-bc05-edcd32ebd6cf" isDerived="false" sourceEndRoleName="atribuir dados de temperatura corporal" targetEndRoleName="Paciente" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="02227a75-2ddf-4026-9ae1-9a8dcb92d9de" LastKnownName="Paciente" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="37a91b3c-299f-4df9-99b6-d560ebaecf5f" name="atribuir dados de temperatura corporal" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b342db56-afcd-46d9-9877-9bfa10150118" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea91b1de-b389-4839-b615-c3c3061d1a0c" name="Paciente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f67a03ba-3bdb-4b05-9293-46658f5636af" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="605e1040-d9e4-44e9-96c0-6877859a1ec5" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="32365883-2b55-43bc-81e5-7697f1f4400b" name="EHRClinicalModelingProject">
+    <elementDefinition Id="79c4b29f-79c9-4c13-900e-51b0277837e5" />
+  </package>
+</useCaseModelRoot>

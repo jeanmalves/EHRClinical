@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="add_EHR">
+  <useCaseModelRootMoniker Id="f53e704c-46a5-45e6-b42c-d8b81fdb8efd" />
+  <nestedChildShapes>
+    <actorShape Id="97d7479f-3017-48c3-aa71-cd94a9fac460" absoluteBounds="3, 2.875, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="cda9f1f2-33ac-4278-945c-c8be8973eb70" LastKnownName="Atendente" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="aced916a-11ec-4187-b25a-3ac6ca9505dd" absoluteBounds="6.125, 1.75, 1.625, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="baa62187-15b5-4142-8fe5-9c9945cad60f" LastKnownName="Adicionar registro eletrônico de saúde" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="87d53bbb-b889-4be5-af18-c55c0c40931d" absoluteBounds="3.5, 1.75, 1.625, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="30c83104-4925-4f07-99f3-c1bbc9edc1ac" LastKnownName="Autenticar usuário" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(5.125 : 2.125); (6.125 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="6b71d836-b2c9-4d2a-aa1e-44f6702bafa8" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="87d53bbb-b889-4be5-af18-c55c0c40931d" />
+        <useCaseShapeMoniker Id="aced916a-11ec-4187-b25a-3ac6ca9505dd" />
+      </nodes>
+    </includeConnector>
+    <useCaseAssociationConnector edgePoints="[(3.5 : 2.88970588235294); (3.9547613729792 : 2.46169517837252)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="47b9dd7f-c64c-4ddf-bf31-881d06aefa4c" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="97d7479f-3017-48c3-aa71-cd94a9fac460" />
+        <useCaseShapeMoniker Id="87d53bbb-b889-4be5-af18-c55c0c40931d" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <actorShape Id="47c4958f-0a3d-4e2b-850e-d4b7fc8a4ece" absoluteBounds="4.75, 2.875, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="7b80f21a-7689-44b4-9120-0ca0ed5f46e4" LastKnownName="Sistema" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(4.55823816427265 : 2.48243732985113); (4.828125 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="93f643ec-8400-4993-8601-874bd79110be" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="87d53bbb-b889-4be5-af18-c55c0c40931d" />
+        <actorShapeMoniker Id="47c4958f-0a3d-4e2b-850e-d4b7fc8a4ece" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

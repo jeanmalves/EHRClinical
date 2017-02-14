@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="autenticar_usuario">
+  <useCaseModelRootMoniker Id="e9c28005-792d-4adf-a8de-ae2ebb521d7f" />
+  <nestedChildShapes>
+    <actorShape Id="81e7017d-73c0-4063-8595-a5dac75b997b" absoluteBounds="1.375, 2, 0.75, 0.75" isReference="false" heightOffset="0">
+      <actorMoniker Id="1d7ba95a-942a-499a-acb8-80a058715a76" LastKnownName="Usuário" />
+      <relativeChildShapes />
+    </actorShape>
+    <actorShape Id="df2dfd01-e42b-4cb7-9aa9-f2949f1e6367" absoluteBounds="5.75, 2, 0.75, 0.75" isReference="false" heightOffset="0">
+      <actorMoniker Id="92e2a263-22ef-4ee9-beb1-b8d12e73aac9" LastKnownName="Sistema" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="2994a444-cbc9-4c56-a0ad-dddec3504109" absoluteBounds="3.125, 1.375, 1.875, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="fc19d3e2-cc9a-42b6-b758-0a4064f81d8d" LastKnownName="Autenticar usuário" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(2.125 : 2.28378378378378); (3.23115507241133 : 2.01471903644049)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="551597fd-6041-4c70-b7e6-d4baa1b3a3fd" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="81e7017d-73c0-4063-8595-a5dac75b997b" />
+        <useCaseShapeMoniker Id="2994a444-cbc9-4c56-a0ad-dddec3504109" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(4.87191119761869 : 2.03324850844146); (5.75 : 2.27272727272727)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="2c107092-08f6-4183-bf80-df1d921c06ef" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="2994a444-cbc9-4c56-a0ad-dddec3504109" />
+        <actorShapeMoniker Id="df2dfd01-e42b-4cb7-9aa9-f2949f1e6367" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="216d5199-bdac-49c8-8efa-e0c2a81da83b" name="ativar_usuario" linkedPackageId="4ee90182-42a3-4b0b-a69a-205eccd5c37c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="ccd8f718-44f3-41bf-9024-c0eb18241191">
+      <profileInstance Id="a868397a-5c03-4e98-a6ed-58e4a9d7a347" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="8cdfe4bd-20fa-4e3b-a7ff-b1828d8b2f82">
+      <profileInstance Id="0069ca92-79dd-4863-a9a9-3a81f760798c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="d394b8d6-a7c0-4a1b-a7ee-90840a58f49d" name="Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="96e61619-9d7a-4772-82dd-b300145bfefb" />
+        <targetEnds>
+          <association Id="5db6ed0d-e1d0-4196-94ed-5256d5af587d" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Ativar o usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="aa6a42ea-4796-485a-9da3-d6544aaecad7" LastKnownName="Ativar o usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="214105c8-a4e0-4742-90fc-abc931de0b05" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="723543af-a7dd-4a6d-baeb-41e0e66d0353" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="02dcb955-3d9c-41af-81b3-75355368e515" name="Ativar o usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9e6c83ec-bee5-4d84-a498-8eca8819f8d1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="70fc73fe-d6c3-4e88-a7ef-71b52fda26d7" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="a08c4804-bcc0-4975-b2d5-4f8b31a2cea1" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ffc59476-3be0-4b86-89a5-174c794fb152" />
+        <targetEnds>
+          <association Id="bc8ed2d2-3e29-4ef7-83b6-f0de7f260d21" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Autenticar usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a2b91d21-ea9b-419d-bedc-bc4958d876b2" LastKnownName="Autenticar usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="398145c5-0290-472a-a70e-60aeba5aa4fd" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3c90e9e9-8a07-4902-83ff-e71063a34c60" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="49afbda8-901d-4a1f-9943-cb42ff21cc4e" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="496bea6a-d16c-4b14-b701-c947eddb47be" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="34a8ecb6-4d1d-418d-9bcc-a1b8aae1ef82" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="aa6a42ea-4796-485a-9da3-d6544aaecad7" name="Ativar o usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8dc58809-9368-4a6b-b55f-6f707667b742" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a2b91d21-ea9b-419d-bedc-bc4958d876b2" name="Autenticar usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c77e6e5c-f945-41a8-87bb-df20430a4005" />
+        <targetEnds>
+          <association Id="82ba7dae-0a30-4c9e-8453-e29236a9cb83" isDerived="false" sourceEndRoleName="Autenticar usuário" targetEndRoleName="Sistema" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="19cc0f7a-f9a9-485c-9a0a-86250332b9b5" LastKnownName="Sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c8028dca-dfab-4eeb-9673-430ffcc103fe" name="Autenticar usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b576b9af-6c44-4247-bb37-fd76376eaedf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="37284f3b-f3e5-4c58-9c7a-a0157e4359df" name="Sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0be987a0-ca19-44e7-91a4-87d8c17fb18c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ed6a9f99-b784-469d-af57-c993f36cca94" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="bfc21c2e-0bd7-4ddd-8720-d2d3449c14c6">
+            <useCaseMoniker Id="aa6a42ea-4796-485a-9da3-d6544aaecad7" LastKnownName="Ativar o usuário" />
+            <elementDefinition Id="7bc4d179-a548-4b12-90c3-14a2a3b1c559" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="19cc0f7a-f9a9-485c-9a0a-86250332b9b5" name="Sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8a68ebff-2799-4803-991f-099c38988104" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="4ee90182-42a3-4b0b-a69a-205eccd5c37c" name="EHRClinicalModelingProject">
+    <elementDefinition Id="79c4b29f-79c9-4c13-900e-51b0277837e5" />
+  </package>
+</useCaseModelRoot>
