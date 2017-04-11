@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenEHR", "..\OpenEHR\src\O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHRClinicalDesktopApplication", "EHRClinicalDesktopApplication\EHRClinicalDesktopApplication.csproj", "{3C58E6A1-76AA-4451-BCA4-F7C1F16E577D}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EHRClinicalDB", "EHRClinicalDB\EHRClinicalDB.sqlproj", "{252C4007-66F1-4CE4-AAD2-8CD6D4543285}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +87,36 @@ Global
 		{3C58E6A1-76AA-4451-BCA4-F7C1F16E577D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3C58E6A1-76AA-4451-BCA4-F7C1F16E577D}.Release|x86.ActiveCfg = Release|Any CPU
 		{3C58E6A1-76AA-4451-BCA4-F7C1F16E577D}.Release|x86.Build.0 = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Debug|x86.Build.0 = Debug|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.InternalRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.InternalRelease|Any CPU.Build.0 = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.InternalRelease|Any CPU.Deploy.0 = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.InternalRelease|x86.ActiveCfg = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.InternalRelease|x86.Build.0 = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.InternalRelease|x86.Deploy.0 = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Release|x86.ActiveCfg = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Release|x86.Build.0 = Release|Any CPU
+		{252C4007-66F1-4CE4-AAD2-8CD6D4543285}.Release|x86.Deploy.0 = Release|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.InternalRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.InternalRelease|Any CPU.Build.0 = Release|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.InternalRelease|x86.ActiveCfg = Release|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.InternalRelease|x86.Build.0 = Release|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{0F8B9A68-E5E6-4392-A7EC-61CBB5E448E1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
