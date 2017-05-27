@@ -61,5 +61,15 @@
   <ItemGroup>
     <Build Include="Archetypes.sql" />
     <Build Include="OperationalsTemplates.sql" />
+    <Build Include="TemplateAttributes.sql" />
+    <Build Include="Data.sql" />
+    <Build Include="Users.sql" />
+    <Build Include="Patients.sql" />
+    <Build Include="PatientRecords.sql" />
+    <Build Include="Doctors.sql" />
+    <Build Include="Features.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="EHRClinicalDB.refactorlog" />
   </ItemGroup>
 </Project>

@@ -39,10 +39,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DAO\Archetype.cs">
       <DependentUpon>Clinical.tt</DependentUpon>
@@ -70,7 +74,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Clinical.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\C__RefactorLog.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Data.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Doctor.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Feature.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\OperationalsTemplate.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Patient.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\PatientRecord.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Roles.cs" />
+    <Compile Include="DAO\RolesDictionary.cs" />
+    <Compile Include="DAO\TemplateAttribute.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\User.cs">
       <DependentUpon>Clinical.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +133,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -12,24 +12,29 @@ namespace Model.DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class OperationalsTemplate
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OperationalsTemplate()
+        public User()
         {
-            this.PatientRecords = new HashSet<PatientRecord>();
-            this.TemplateAttributes = new HashSet<TemplateAttribute>();
+            this.Doctors = new HashSet<Doctor>();
+            this.Patients = new HashSet<Patient>();
             this.Features = new HashSet<Feature>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Template { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Token { get; set; }
+        public string Organization { get; set; }
+        public short Access { get; set; }
+        public short Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientRecord> PatientRecords { get; set; }
+        public virtual ICollection<Doctor> Doctors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TemplateAttribute> TemplateAttributes { get; set; }
+        public virtual ICollection<Patient> Patients { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feature> Features { get; set; }
     }

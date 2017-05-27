@@ -12,25 +12,24 @@ namespace Model.DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class OperationalsTemplate
+    public partial class PatientRecord
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OperationalsTemplate()
+        public PatientRecord()
         {
-            this.PatientRecords = new HashSet<PatientRecord>();
-            this.TemplateAttributes = new HashSet<TemplateAttribute>();
-            this.Features = new HashSet<Feature>();
+            this.Data = new HashSet<Data>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Template { get; set; }
+        public int PatientId { get; set; }
+        public int OpTempId { get; set; }
+        public System.DateTime CreatedAt { get; set; }
+        public int DoctorId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientRecord> PatientRecords { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TemplateAttribute> TemplateAttributes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feature> Features { get; set; }
+        public virtual ICollection<Data> Data { get; set; }
+        public virtual OperationalsTemplate OperationalsTemplate { get; set; }
+        public virtual Patient Patient { get; set; }
+        public virtual Doctor Doctor { get; set; }
     }
 }
