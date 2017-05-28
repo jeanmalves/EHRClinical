@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\PatientBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DAO\Archetype.cs">
@@ -97,6 +98,8 @@
     </Compile>
     <Compile Include="DAO\Roles.cs" />
     <Compile Include="DAO\RolesDictionary.cs" />
+    <Compile Include="DAO\Sex.cs" />
+    <Compile Include="DAO\SexDictionary.cs" />
     <Compile Include="DAO\TemplateAttribute.cs">
       <DependentUpon>Clinical.tt</DependentUpon>
     </Compile>
