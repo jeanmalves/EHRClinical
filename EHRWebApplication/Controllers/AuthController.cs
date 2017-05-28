@@ -47,7 +47,7 @@ namespace EHRWebApplication.Controllers
                 Session["user"] = user.UserName;
                 Session["email"] = user.Email;
                 Session["role"] = user.Access;
-                
+                Session["auth"] = "EHR_" + user.Access;   
                 return RedirectToAction("Home", "Index");
             }
             else
@@ -55,6 +55,16 @@ namespace EHRWebApplication.Controllers
                 ModelState.AddModelError("", "Dados inválidos, tente novamente.");
                 return View(auth);
             }
+        }
+
+        // POST: /Auth/LogOff
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogOff()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login", "Auth");
         }
     }
 }
