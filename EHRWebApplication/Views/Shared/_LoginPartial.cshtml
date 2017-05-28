@@ -1,0 +1,22 @@
+﻿@if (Session["autenticado"] == "S2AL1")
+{
+
+    using (Html.BeginForm("LogOff", "Auth", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Olá " + Session["usuario"] + "!", "Index", "Alunos", routeValues: null, htmlAttributes: new { title = "Meus Dados" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Log in", "Login", "Auth", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+
