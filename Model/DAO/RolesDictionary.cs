@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Model.DAO
 {
@@ -13,7 +9,6 @@ namespace Model.DAO
 
         public RolesDictionary()
         {
-            //Cursos atualmente ofertados nos processos de seleção à UTFPR
             rolesDictionary = new Dictionary<int, string>();
             rolesDictionary.Add((int) Roles.ADMIN, "Administrador");
             rolesDictionary.Add((int)Roles.PATIENT, "Paciente");
