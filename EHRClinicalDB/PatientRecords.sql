@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[PatientRecords]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [OpTempId] INT NOT NULL,
 	[PatientId] INT NOT NULL,
 	[DoctorId] INT NOT NULL,

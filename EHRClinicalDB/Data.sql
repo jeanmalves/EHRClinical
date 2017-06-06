@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Data]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [TemplateAttributeId] INT NOT NULL, 
     [Value] VARCHAR(MAX) NOT NULL, 
     [PatientRecordId] INT NOT NULL, 

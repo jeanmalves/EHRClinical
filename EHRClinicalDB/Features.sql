@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Features]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [name] VARCHAR(150) NOT NULL, 
     [Description] VARCHAR(MAX) NULL, 
     [DisplayMenu] SMALLINT NULL DEFAULT 0,
