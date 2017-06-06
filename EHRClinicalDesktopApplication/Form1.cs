@@ -29,12 +29,12 @@ namespace EHRClinicalDesktopApplication
 
         public void openEHRTest()
         {
-            User user = new User();
-            user.UserName = "jeanmalves";
-            user.Password = "82959111";
+            //User user = new User();
+            //user.UserName = "jeanmalves";
+            //user.Password = "82959111";
 
-            EHRServer ehrServer= new EHRServer(user);
-            var token = ehrServer.Login();
+            //EHRServer ehrServer= new EHRServer(user);
+            //var token = ehrServer.Login();
 
 
             XmlReader xml = XmlReader.Create(@"C:\Users\Public\Documents\My Clinical Models\Sample Set\Templates\Sample Simple Blood pressure.opt");
