@@ -5,8 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EHRWebApplication.Models
 {
-    public class PatientViewModel
+    public class DoctorViewModel
     {
+
         public int Id { get; set; }
         [Required(ErrorMessage = "Campo obrigatório.")]
         [Display(Name = "Nome")]
@@ -31,10 +32,13 @@ namespace EHRWebApplication.Models
             set { }
         }
 
+        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Display(Name = "CRM nº")]
+        public int MedicId { get; set; }
         public UserViewModel User { get; set; }
     }
 
-    public class PatientDetailsViewModel
+    public class DoctorDetailsViewModel
     {
         public int Id { get; set; }
         [Display(Name = "Nome")]
@@ -50,8 +54,8 @@ namespace EHRWebApplication.Models
         [Display(Name = "Sexo")]
         public string Sex { get; set; }
 
-        [Display(Name = "EHR nº")]
-        public string EhrNumber { get; set; }
+        [Display(Name = "CRM nº")]
+        public string CRMNumber { get; set; }
 
         public User User { get; set; }
     }

@@ -1,4 +1,4 @@
-﻿@if (Session["autenticado"] == "S2AL1")
+﻿@if (Session["auth"] != null)
 {
 
     using (Html.BeginForm("LogOff", "Auth", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -7,7 +7,7 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Olá " + Session["usuario"] + "!", "Index", "Alunos", routeValues: null, htmlAttributes: new { title = "Meus Dados" })
+                @Html.ActionLink("Olá " + Session["user"] + "!", "Profile", "User", routeValues: null, htmlAttributes: new { title = "Meus Dados" })
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>

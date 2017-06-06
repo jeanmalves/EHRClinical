@@ -39,6 +39,7 @@ namespace EHRWebApplication.Controllers
             User user = new User();
             user.UserName = auth.UserName;
             user.Password = auth.Password;
+            user.Access = (short) auth.Role;
 
             user = UserBLL.Authenticate(user);
 
@@ -47,8 +48,10 @@ namespace EHRWebApplication.Controllers
                 Session["user"] = user.UserName;
                 Session["email"] = user.Email;
                 Session["role"] = user.Access;
-                Session["auth"] = "EHR_" + user.Access;   
-                return RedirectToAction("Home", "Index");
+                Session["auth"] = "EHR_" + user.Access;
+                Session["Id"] = user.Id;
+
+                return RedirectToAction("About", "Home");
             }
             else
             {

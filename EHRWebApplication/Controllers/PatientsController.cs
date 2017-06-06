@@ -32,20 +32,32 @@ namespace EHRWebApplication.Controllers
             }
 
             var patient = PatientBLL.GetPatientById(id);
-
+            
             if (patient == null)
             {
                 return HttpNotFound();
             }
 
-            return View(patient);
+            PatientDetailsViewModel patientViewModel = new PatientDetailsViewModel();
+
+            patientViewModel.Id = patient.Id;
+            patientViewModel.FirstName = patient.FirstName;
+            patientViewModel.LastName = patient.LastName;
+            patientViewModel.Birth = patient.Birth;
+            patientViewModel.Sex = SexDictionary.getValue(patient.sex);
+            patientViewModel.EhrNumber = patient.EHR.ToString();
+            patientViewModel.User = patient.User;
+
+            return View(patientViewModel);
         }
 
         // GET: Patients/Create
         public ActionResult Create()
         {
-            //ViewBag.UserId = new SelectList(db.Users, "Id", "UserName");
-            return View(new PatientViewModel());
+            var patientVM = new PatientViewModel();
+            patientVM.User = new UserViewModel();
+
+            return View(patientVM);
         }
 
         // POST: Patients/Create
@@ -53,24 +65,32 @@ namespace EHRWebApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Birth,sex,UserId,EHR")] PatientViewModel pa)
+        public ActionResult Create(PatientViewModel pa, UserViewModel User)
         {
             if (ModelState.IsValid)
             {
                 Patient patient = new Patient();
+
                 patient.FirstName = pa.FirstName;
                 patient.LastName = pa.LastName;
                 patient.sex = pa.Sex;
-                
-                bool update = PatientBLL.UpdatePatient(patient);
+                patient.Birth = (DateTime) pa.Birth;
 
-                if (update)
+                User user = new User();
+                user.Email = User.Email;
+                user.UserName = User.UserName;
+                user.Password = User.Password;
+                user.Access = (short) Roles.PATIENT;
+                user.Status = 1;
+
+                bool create = PatientBLL.AddPatient(patient, user);
+
+                if (create)
                 {
                     return RedirectToAction("Index");
                 }
             }
 
-           // ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", patient.UserId);
             return View(pa);
         }
 
@@ -81,13 +101,29 @@ namespace EHRWebApplication.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Patient patient = db.Patients.Find(id);
+
+            Patient patient = PatientBLL.GetPatientById(id);
+
             if (patient == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", patient.UserId);
-            return View(patient);
+
+            PatientViewModel patientVM = new PatientViewModel();
+            patientVM.FirstName = patient.FirstName;
+            patientVM.LastName = patient.LastName;
+            patientVM.Sex = patient.sex;
+            patientVM.Birth = patient.Birth;
+
+            var userVM = new UserViewModel();
+            userVM.UserName = patient.User.UserName;
+            userVM.Password = patient.User.Password;
+            userVM.Email = patient.User.Email;
+            patientVM.User = userVM;
+
+            ViewBag.sexSelected = new SelectList(SexDictionary.SexList, "Key", "Value", patientVM.Sex);
+            
+            return View(patientVM);
         }
 
         // POST: Patients/Edit/5

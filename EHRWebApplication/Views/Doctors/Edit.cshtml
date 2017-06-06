@@ -1,20 +1,21 @@
-﻿@model EHRWebApplication.Models.PatientViewModel
+﻿@model  EHRWebApplication.Models.DoctorViewModel
 
 @{
-    ViewBag.Title = "Cadastro de Pacientes";
+    ViewBag.Title = "Cadastro de Médicos";
 }
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Cadastrar Paciente</h4>
+        <h4>Editar dados do médico</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
+        @Html.HiddenFor(model => model.Id)
+
         <div class="form-group">
             @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -34,28 +35,31 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Birth, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Birth, new { htmlAttributes = new { @class = "form-control", id = "birth" } })
+                @Html.EditorFor(model => model.Birth, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Birth, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MedicId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MedicId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MedicId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Sex, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Sex,
-                new SelectList(Model.SexList, "Key", "Value"),
-                "- Selecione -",
-                new { @class = "form-control", id = "" })
-
+                @Html.DropDownList("sexSelected", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Sex, "", new { @class = "text-danger" })
             </div>
         </div>
-       
-        @Html.Partial("~/Views/User/_CadUserSimplePartial.cshtml", Model.User)
+
+        @Html.Partial("~/Views/User/_EditUserSimplePartial.cshtml", Model.User)
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -64,11 +68,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    <script>
-        $(document).ready(function (){
-            $("#birth").inputmask("mask", { "mask": "99/99/9999" });
-        });
-    </script>
-}

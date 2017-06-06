@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -84,6 +85,28 @@ namespace EHRWebApplication.Controllers
             {
                 return View();
             }
+        }
+
+        public RedirectToRouteResult profile()
+        {
+            if (Session["role"] != null)
+            {
+                var role = Convert.ToInt32(Session["role"]);
+                
+                if (role == (int) Roles.PATIENT)
+                {
+                    int id = Convert.ToInt32(Session["Id"]);
+                    return RedirectToAction("Details", "Patients", new { id = id });
+                }
+
+                if (role == (int)Roles.DOCTOR)
+                {
+                    int id = Convert.ToInt32(Session["Id"]);
+                    return RedirectToAction("Details", "Doctors", new { id = id, profile = true });
+                }
+            }
+
+            return RedirectToAction("Login", "Auth");
         }
     }
 }
