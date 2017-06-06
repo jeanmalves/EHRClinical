@@ -1,25 +1,18 @@
-﻿using Model.DAO;
+﻿using EHRServerApi.entity;
 using RestSharp;
-using RestSharp.Authenticators;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EHRServerApi
 {
     public class EHRServer : WebService, IWebService
     {
         private static string organization = "684795";
-        public EHRServer(User user) : base("https://cabolabs-ehrserver.rhcloud.com/rest")
-        {
-            UserName = user.UserName;
-            Password = user.Password;
-        }
+        public EHRServer() : base("https://cabolabs-ehrserver.rhcloud.com/rest") { }
 
-        public string Login()
+        public User Login(string userName, string password)
         {
+            UserName = userName;
+            Password = password;
+
             client.Authenticator = new EHRServerAuthenticator("username", UserName, "password", Password, "organization", organization);
             
             RestRequest request = new RestRequest("login", Method.POST);
@@ -27,7 +20,47 @@ namespace EHRServerApi
             request.RequestFormat = DataFormat.Json;
 
             var response = client.Execute<User>(request);
-            return "token";
+
+            User user = new User();
+
+            if (response.ErrorException != null)
+            {
+                // ajustar
+                return user;
+            }
+
+            user = GetProfile(UserName, response.Data.Token);
+
+            if (user != null)
+            {
+                user.Token = response.Data.Token;
+                user.Organization = user.Organizations                        
+                                        .Find(a => a.Uid == "4698e7e5-fb6a-4e07-b6c9-024c76419bd5")
+                                        .Name;
+                return user;
+            }
+
+            return response.Data;
+            
+        }
+
+        public User GetProfile(string userName, string token )
+        {
+            RestRequest request = new RestRequest("profile/" + userName, Method.GET);
+
+            request.AddHeader("Authorization", token);
+
+            request.RequestFormat = DataFormat.Json;
+
+            var response = client.Execute<User>(request);
+
+            if (response.ErrorException != null)
+            {
+                // ajustar
+                return new User(); ;
+            }
+
+            return response.Data;
         }
     }
 }

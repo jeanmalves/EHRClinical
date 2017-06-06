@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EHRServerApi.entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace EHRServerApi
 {
     interface IWebService
     {
-        string Login();
+        User Login(string userName, string password);
     }
 }
