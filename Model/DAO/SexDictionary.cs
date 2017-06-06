@@ -9,7 +9,7 @@ namespace Model.DAO
 
         public SexDictionary()
         {
-            sexDictionary = new Dictionary<int, string>();
+            sexDictionary = new Dictionary<short, string>();
             sexDictionary.Add((short)Sex.FEMALE, "Feminino");
             sexDictionary.Add((short)Sex.MALE, "Masculino");
             sexDictionary.Add((short)Sex.INDETERMINATE, "Indeterminado");
@@ -25,6 +25,11 @@ namespace Model.DAO
                 }
                 return sexDictionary;
             }
+        }
+
+        public static string getValue(short key)
+        {
+            return SexList[key];
         }
     }
 }

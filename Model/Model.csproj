@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\DoctorBLL.cs" />
     <Compile Include="BLL\PatientBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Class1.cs" />
@@ -74,9 +75,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Clinical.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\C__RefactorLog.cs">
-      <DependentUpon>Clinical.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Data.cs">
       <DependentUpon>Clinical.tt</DependentUpon>
@@ -109,17 +107,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="DAO\Clinical.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Clinical.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="DAO\Clinical.edmx.diagram">
       <DependentUpon>Clinical.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EHRServerApi\EHRServerApi.csproj">
+      <Project>{56045e05-575d-4ae4-bd74-ef3b8c9922e0}</Project>
+      <Name>EHRServerApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAO\Clinical.Context.tt">
@@ -133,10 +138,6 @@
       <LastGenOutput>Clinical.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

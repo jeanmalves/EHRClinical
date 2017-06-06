@@ -4,18 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ClinicalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="__RefactorLog">
-          <Key>
-            <PropertyRef Name="OperationKey" />
-          </Key>
-          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
-        </EntityType>
+      <Schema Namespace="ClinicalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Archetypes">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Term" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="ArchetypeID" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Parent" Type="int" />
@@ -24,16 +18,16 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="templateAttributeId" Type="int" Nullable="false" />
-          <Property Name="value" Type="varchar(max)" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TemplateAttributeId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar(max)" Nullable="false" />
           <Property Name="PatientRecordId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Doctors">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="LastName" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Birth" Type="date" Nullable="false" />
@@ -45,7 +39,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Description" Type="varchar(max)" />
           <Property Name="DisplayMenu" Type="smallint" />
@@ -58,7 +52,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="Template" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
@@ -66,7 +60,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OpTempId" Type="int" Nullable="false" />
           <Property Name="PatientId" Type="int" Nullable="false" />
           <Property Name="DoctorId" Type="int" Nullable="false" />
@@ -76,7 +70,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="LastName" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Birth" Type="date" Nullable="false" />
@@ -88,22 +82,22 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="attribute" Type="varchar(max)" Nullable="false" />
-          <Property Name="pathAttribute" Type="varchar(max)" Nullable="false" />
-          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="opTempId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Attribute" Type="varchar(max)" Nullable="false" />
+          <Property Name="PathAttribute" Type="varchar(max)" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpTempId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="password" Type="nchar" MaxLength="8" Nullable="false" />
-          <Property Name="token" Type="varchar(max)" Nullable="false" />
-          <Property Name="organization" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="8" Nullable="false" />
+          <Property Name="Token" Type="varchar(max)" />
+          <Property Name="Organization" Type="nchar" MaxLength="10" />
           <Property Name="Access" Type="smallint" Nullable="false" />
           <Property Name="Status" Type="smallint" Nullable="false" />
         </EntityType>
@@ -127,7 +121,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Data">
-              <PropertyRef Name="templateAttributeId" />
+              <PropertyRef Name="TemplateAttributeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -223,12 +217,11 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="TemplateAttributes">
-              <PropertyRef Name="opTempId" />
+              <PropertyRef Name="OpTempId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ClinicalModelStoreContainer">
-          <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Archetypes" EntityType="Self.Archetypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
@@ -279,7 +272,8 @@
             <End Role="TemplateAttributes" EntitySet="TemplateAttributes" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ClinicalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -287,296 +281,289 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Term" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ArchetypeID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Parent" Type="Int32" />
-        </EntityType>
-        <EntityType Name="OperationalsTemplate">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Template" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="PatientRecords" Relationship="ClinicalModel.FK_PatientRecords_OperationalsTemplates" FromRole="OperationalsTemplate" ToRole="PatientRecord" />
-          <NavigationProperty Name="TemplateAttributes" Relationship="ClinicalModel.FK_TemplateAttributes_OperationalsTemplates" FromRole="OperationalsTemplate" ToRole="TemplateAttribute" />
-          <NavigationProperty Name="Features" Relationship="ClinicalModel.FK_Features_ToOperationalsTemplates" FromRole="OperationalsTemplate" ToRole="Feature" />
-        </EntityType>
-        <EntityContainer Name="ClinicalEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Archetypes" EntityType="Self.Archetype" />
-          <EntitySet Name="OperationalsTemplates" EntityType="Self.OperationalsTemplate" />
-          <EntitySet Name="C__RefactorLog" EntityType="ClinicalModel.C__RefactorLog" />
-          <EntitySet Name="Data1" EntityType="ClinicalModel.Data" />
-          <EntitySet Name="TemplateAttributes" EntityType="ClinicalModel.TemplateAttribute" />
-          <EntitySet Name="Users" EntityType="ClinicalModel.User" />
-          <EntitySet Name="PatientRecords" EntityType="ClinicalModel.PatientRecord" />
-          <EntitySet Name="Patients" EntityType="ClinicalModel.Patient" />
-          <AssociationSet Name="FK_Data_PatientRecords" Association="ClinicalModel.FK_Data_PatientRecords">
-            <End Role="PatientRecord" EntitySet="PatientRecords" />
-            <End Role="Datum" EntitySet="Data1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Data_TemplateAttributes" Association="ClinicalModel.FK_Data_TemplateAttributes">
-            <End Role="TemplateAttribute" EntitySet="TemplateAttributes" />
-            <End Role="Datum" EntitySet="Data1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PatientRecords_OperationalsTemplates" Association="ClinicalModel.FK_PatientRecords_OperationalsTemplates">
-            <End Role="OperationalsTemplate" EntitySet="OperationalsTemplates" />
-            <End Role="PatientRecord" EntitySet="PatientRecords" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TemplateAttributes_OperationalsTemplates" Association="ClinicalModel.FK_TemplateAttributes_OperationalsTemplates">
-            <End Role="OperationalsTemplate" EntitySet="OperationalsTemplates" />
-            <End Role="TemplateAttribute" EntitySet="TemplateAttributes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PatientRecords_Patients" Association="ClinicalModel.FK_PatientRecords_Patients">
-            <End Role="Patient" EntitySet="Patients" />
-            <End Role="PatientRecord" EntitySet="PatientRecords" />
-          </AssociationSet>
-          <EntitySet Name="Doctors" EntityType="ClinicalModel.Doctor" />
-          <AssociationSet Name="FK_PatientRecords_Doctors" Association="ClinicalModel.FK_PatientRecords_Doctors">
-            <End Role="Doctor" EntitySet="Doctors" />
-            <End Role="PatientRecord" EntitySet="PatientRecords" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Doctors_ToUsers" Association="ClinicalModel.FK_Doctors_ToUsers">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Doctor" EntitySet="Doctors" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Patients_ToUsers" Association="ClinicalModel.FK_Patients_ToUsers">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Patient" EntitySet="Patients" />
-          </AssociationSet>
-          <EntitySet Name="Features" EntityType="ClinicalModel.Feature" />
-          <AssociationSet Name="FK_Features_ToOperationalsTemplates" Association="ClinicalModel.FK_Features_ToOperationalsTemplates">
-            <End Role="OperationalsTemplate" EntitySet="OperationalsTemplates" />
-            <End Role="Feature" EntitySet="Features" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Features_ToUsers" Association="ClinicalModel.FK_Features_ToUsers">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Feature" EntitySet="Features" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="C__RefactorLog">
-          <Key>
-            <PropertyRef Name="OperationKey" />
-          </Key>
-          <Property Name="OperationKey" Type="Guid" Nullable="false" />
         </EntityType>
         <EntityType Name="Data">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TemplateAttributeId" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PatientRecordId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="PatientRecord" Relationship="ClinicalModel.FK_Data_PatientRecords" FromRole="Datum" ToRole="PatientRecord" />
-          <NavigationProperty Name="TemplateAttribute" Relationship="ClinicalModel.FK_Data_TemplateAttributes" FromRole="Datum" ToRole="TemplateAttribute" />
+          <NavigationProperty Name="PatientRecord" Relationship="Self.FK_Data_PatientRecords" FromRole="Data" ToRole="PatientRecords" />
+          <NavigationProperty Name="TemplateAttribute" Relationship="Self.FK_Data_TemplateAttributes" FromRole="Data" ToRole="TemplateAttributes" />
         </EntityType>
-        <EntityType Name="TemplateAttribute">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Attribute" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PathAttribute" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="OpTempId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Data" Relationship="ClinicalModel.FK_Data_TemplateAttributes" FromRole="TemplateAttribute" ToRole="Datum" />
-          <NavigationProperty Name="OperationalsTemplate" Relationship="ClinicalModel.FK_TemplateAttributes_OperationalsTemplates" FromRole="TemplateAttribute" ToRole="OperationalsTemplate" />
-        </EntityType>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Token" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Organization" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Access" Type="Int16" Nullable="false" />
-          <Property Name="Status" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="Doctors" Relationship="ClinicalModel.FK_Doctors_ToUsers" FromRole="User" ToRole="Doctor" />
-          <NavigationProperty Name="Patients" Relationship="ClinicalModel.FK_Patients_ToUsers" FromRole="User" ToRole="Patient" />
-          <NavigationProperty Name="Features" Relationship="ClinicalModel.FK_Features_ToUsers" FromRole="User" ToRole="Feature" />
-        </EntityType>
-        <EntityType Name="PatientRecord">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="PatientId" Type="Int32" Nullable="false" />
-          <Property Name="OpTempId" Type="Int32" Nullable="false" />
-          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Data" Relationship="ClinicalModel.FK_Data_PatientRecords" FromRole="PatientRecord" ToRole="Datum" />
-          <NavigationProperty Name="OperationalsTemplate" Relationship="ClinicalModel.FK_PatientRecords_OperationalsTemplates" FromRole="PatientRecord" ToRole="OperationalsTemplate" />
-          <NavigationProperty Name="Patient" Relationship="ClinicalModel.FK_PatientRecords_Patients" FromRole="PatientRecord" ToRole="Patient" />
-          <Property Name="DoctorId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Doctor" Relationship="ClinicalModel.FK_PatientRecords_Doctors" FromRole="PatientRecord" ToRole="Doctor" />
-        </EntityType>
-        <EntityType Name="Patient">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="Birth" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="sex" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="PatientRecords" Relationship="ClinicalModel.FK_PatientRecords_Patients" FromRole="Patient" ToRole="PatientRecord" />
-          <Property Name="UserId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="ClinicalModel.FK_Patients_ToUsers" FromRole="Patient" ToRole="User" />
-          <Property Name="EHR" Type="Int32" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Data_PatientRecords">
-          <End Type="ClinicalModel.PatientRecord" Role="PatientRecord" Multiplicity="1" />
-          <End Type="ClinicalModel.Data" Role="Datum" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PatientRecord">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Datum">
-              <PropertyRef Name="PatientRecordId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Data_TemplateAttributes">
-          <End Type="ClinicalModel.TemplateAttribute" Role="TemplateAttribute" Multiplicity="1" />
-          <End Type="ClinicalModel.Data" Role="Datum" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TemplateAttribute">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Datum">
-              <PropertyRef Name="TemplateAttributeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PatientRecords_OperationalsTemplates">
-          <End Type="ClinicalModel.OperationalsTemplate" Role="OperationalsTemplate" Multiplicity="1" />
-          <End Type="ClinicalModel.PatientRecord" Role="PatientRecord" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OperationalsTemplate">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PatientRecord">
-              <PropertyRef Name="OpTempId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TemplateAttributes_OperationalsTemplates">
-          <End Type="ClinicalModel.OperationalsTemplate" Role="OperationalsTemplate" Multiplicity="1" />
-          <End Type="ClinicalModel.TemplateAttribute" Role="TemplateAttribute" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OperationalsTemplate">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TemplateAttribute">
-              <PropertyRef Name="OpTempId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PatientRecords_Patients">
-          <End Type="ClinicalModel.Patient" Role="Patient" Multiplicity="1" />
-          <End Type="ClinicalModel.PatientRecord" Role="PatientRecord" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Patient">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PatientRecord">
-              <PropertyRef Name="PatientId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Doctor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Birth" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Sex" Type="Int16" Nullable="false" />
           <Property Name="MedicId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="PatientRecords" Relationship="ClinicalModel.FK_PatientRecords_Doctors" FromRole="Doctor" ToRole="PatientRecord" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="ClinicalModel.FK_Doctors_ToUsers" FromRole="Doctor" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Doctors_ToUsers" FromRole="Doctors" ToRole="Users" />
+          <NavigationProperty Name="PatientRecords" Relationship="Self.FK_PatientRecords_Doctors" FromRole="Doctors" ToRole="PatientRecords" />
         </EntityType>
-        <Association Name="FK_PatientRecords_Doctors">
-          <End Type="ClinicalModel.Doctor" Role="Doctor" Multiplicity="1" />
-          <End Type="ClinicalModel.PatientRecord" Role="PatientRecord" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Doctor">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PatientRecord">
-              <PropertyRef Name="DoctorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Doctors_ToUsers">
-          <End Type="ClinicalModel.User" Role="User" Multiplicity="1" />
-          <End Type="ClinicalModel.Doctor" Role="Doctor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Doctor">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Patients_ToUsers">
-          <End Type="ClinicalModel.User" Role="User" Multiplicity="1" />
-          <End Type="ClinicalModel.Patient" Role="Patient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Patient">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Feature">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DisplayMenu" Type="Int16" />
           <Property Name="TemplateId" Type="Int32" Nullable="false" />
           <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="OperationalsTemplate" Relationship="ClinicalModel.FK_Features_ToOperationalsTemplates" FromRole="Feature" ToRole="OperationalsTemplate" />
-          <NavigationProperty Name="User" Relationship="ClinicalModel.FK_Features_ToUsers" FromRole="Feature" ToRole="User" />
+          <NavigationProperty Name="OperationalsTemplate" Relationship="Self.FK_Features_ToOperationalsTemplates" FromRole="Features" ToRole="OperationalsTemplates" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Features_ToUsers" FromRole="Features" ToRole="Users" />
         </EntityType>
-        <Association Name="FK_Features_ToOperationalsTemplates">
-          <End Type="ClinicalModel.OperationalsTemplate" Role="OperationalsTemplate" Multiplicity="1" />
-          <End Type="ClinicalModel.Feature" Role="Feature" Multiplicity="*" />
+        <EntityType Name="OperationalsTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Template" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Features" Relationship="Self.FK_Features_ToOperationalsTemplates" FromRole="OperationalsTemplates" ToRole="Features" />
+          <NavigationProperty Name="PatientRecords" Relationship="Self.FK_PatientRecords_OperationalsTemplates" FromRole="OperationalsTemplates" ToRole="PatientRecords" />
+          <NavigationProperty Name="TemplateAttributes" Relationship="Self.FK_TemplateAttributes_OperationalsTemplates" FromRole="OperationalsTemplates" ToRole="TemplateAttributes" />
+        </EntityType>
+        <EntityType Name="PatientRecord">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OpTempId" Type="Int32" Nullable="false" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="DoctorId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Data" Relationship="Self.FK_Data_PatientRecords" FromRole="PatientRecords" ToRole="Data" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK_PatientRecords_Doctors" FromRole="PatientRecords" ToRole="Doctors" />
+          <NavigationProperty Name="OperationalsTemplate" Relationship="Self.FK_PatientRecords_OperationalsTemplates" FromRole="PatientRecords" ToRole="OperationalsTemplates" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_PatientRecords_Patients" FromRole="PatientRecords" ToRole="Patients" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Birth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="sex" Type="Int16" Nullable="false" />
+          <Property Name="EHR" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PatientRecords" Relationship="Self.FK_PatientRecords_Patients" FromRole="Patients" ToRole="PatientRecords" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Patients_ToUsers" FromRole="Patients" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="TemplateAttribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Attribute" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PathAttribute" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OpTempId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Data" Relationship="Self.FK_Data_TemplateAttributes" FromRole="TemplateAttributes" ToRole="Data" />
+          <NavigationProperty Name="OperationalsTemplate" Relationship="Self.FK_TemplateAttributes_OperationalsTemplates" FromRole="TemplateAttributes" ToRole="OperationalsTemplates" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Token" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Organization" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Access" Type="Int16" Nullable="false" />
+          <Property Name="Status" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Doctors" Relationship="Self.FK_Doctors_ToUsers" FromRole="Users" ToRole="Doctors" />
+          <NavigationProperty Name="Features" Relationship="Self.FK_Features_ToUsers" FromRole="Users" ToRole="Features" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_ToUsers" FromRole="Users" ToRole="Patients" />
+        </EntityType>
+        <Association Name="FK_Data_PatientRecords">
+          <End Role="PatientRecords" Type="Self.PatientRecord" Multiplicity="1" />
+          <End Role="Data" Type="ClinicalModel.Data" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="OperationalsTemplate">
+            <Principal Role="PatientRecords">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Feature">
+            <Dependent Role="Data">
+              <PropertyRef Name="PatientRecordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Data_TemplateAttributes">
+          <End Role="TemplateAttributes" Type="Self.TemplateAttribute" Multiplicity="1" />
+          <End Role="Data" Type="ClinicalModel.Data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TemplateAttributes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Data">
+              <PropertyRef Name="TemplateAttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctors_ToUsers">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Doctors" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Doctors">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientRecords_Doctors">
+          <End Role="Doctors" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="PatientRecords" Type="Self.PatientRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PatientRecords">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Features_ToOperationalsTemplates">
+          <End Role="OperationalsTemplates" Type="Self.OperationalsTemplate" Multiplicity="1" />
+          <End Role="Features" Type="Self.Feature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OperationalsTemplates">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Features">
               <PropertyRef Name="TemplateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Features_ToUsers">
-          <End Type="ClinicalModel.User" Role="User" Multiplicity="1" />
-          <End Type="ClinicalModel.Feature" Role="Feature" Multiplicity="*" />
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Features" Type="Self.Feature" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="User">
+            <Principal Role="Users">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Feature">
+            <Dependent Role="Features">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PatientRecords_OperationalsTemplates">
+          <End Role="OperationalsTemplates" Type="Self.OperationalsTemplate" Multiplicity="1" />
+          <End Role="PatientRecords" Type="Self.PatientRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OperationalsTemplates">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PatientRecords">
+              <PropertyRef Name="OpTempId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TemplateAttributes_OperationalsTemplates">
+          <End Role="OperationalsTemplates" Type="Self.OperationalsTemplate" Multiplicity="1" />
+          <End Role="TemplateAttributes" Type="Self.TemplateAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OperationalsTemplates">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TemplateAttributes">
+              <PropertyRef Name="OpTempId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientRecords_Patients">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="1" />
+          <End Role="PatientRecords" Type="Self.PatientRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PatientRecords">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_ToUsers">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Patients" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClinicalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Archetypes" EntityType="Self.Archetype" />
+          <EntitySet Name="Data1" EntityType="ClinicalModel.Data" />
+          <EntitySet Name="Doctors" EntityType="Self.Doctor" />
+          <EntitySet Name="Features" EntityType="Self.Feature" />
+          <EntitySet Name="OperationalsTemplates" EntityType="Self.OperationalsTemplate" />
+          <EntitySet Name="PatientRecords" EntityType="Self.PatientRecord" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="TemplateAttributes" EntityType="Self.TemplateAttribute" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Data_PatientRecords" Association="Self.FK_Data_PatientRecords">
+            <End Role="PatientRecords" EntitySet="PatientRecords" />
+            <End Role="Data" EntitySet="Data1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Data_TemplateAttributes" Association="Self.FK_Data_TemplateAttributes">
+            <End Role="TemplateAttributes" EntitySet="TemplateAttributes" />
+            <End Role="Data" EntitySet="Data1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctors_ToUsers" Association="Self.FK_Doctors_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Doctors" EntitySet="Doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientRecords_Doctors" Association="Self.FK_PatientRecords_Doctors">
+            <End Role="Doctors" EntitySet="Doctors" />
+            <End Role="PatientRecords" EntitySet="PatientRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Features_ToOperationalsTemplates" Association="Self.FK_Features_ToOperationalsTemplates">
+            <End Role="OperationalsTemplates" EntitySet="OperationalsTemplates" />
+            <End Role="Features" EntitySet="Features" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Features_ToUsers" Association="Self.FK_Features_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Features" EntitySet="Features" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientRecords_OperationalsTemplates" Association="Self.FK_PatientRecords_OperationalsTemplates">
+            <End Role="OperationalsTemplates" EntitySet="OperationalsTemplates" />
+            <End Role="PatientRecords" EntitySet="PatientRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TemplateAttributes_OperationalsTemplates" Association="Self.FK_TemplateAttributes_OperationalsTemplates">
+            <End Role="OperationalsTemplates" EntitySet="OperationalsTemplates" />
+            <End Role="TemplateAttributes" EntitySet="TemplateAttributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientRecords_Patients" Association="Self.FK_PatientRecords_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="PatientRecords" EntitySet="PatientRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_ToUsers" Association="Self.FK_Patients_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -593,6 +580,43 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Data1">
+            <EntityTypeMapping TypeName="ClinicalModel.Data">
+              <MappingFragment StoreEntitySet="Data">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TemplateAttributeId" ColumnName="TemplateAttributeId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="PatientRecordId" ColumnName="PatientRecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="ClinicalModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctors">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Birth" ColumnName="Birth" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="MedicId" ColumnName="MedicId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Features">
+            <EntityTypeMapping TypeName="ClinicalModel.Feature">
+              <MappingFragment StoreEntitySet="Features">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DisplayMenu" ColumnName="DisplayMenu" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="OperationalsTemplates">
             <EntityTypeMapping TypeName="ClinicalModel.OperationalsTemplate">
               <MappingFragment StoreEntitySet="OperationalsTemplates">
@@ -602,96 +626,52 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="C__RefactorLog">
-            <EntityTypeMapping TypeName="ClinicalModel.C__RefactorLog">
-              <MappingFragment StoreEntitySet="__RefactorLog">
-                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Data1">
-            <EntityTypeMapping TypeName="ClinicalModel.Data">
-              <MappingFragment StoreEntitySet="Data">
-                <ScalarProperty Name="PatientRecordId" ColumnName="PatientRecordId" />
-                <ScalarProperty Name="Value" ColumnName="value" />
-                <ScalarProperty Name="TemplateAttributeId" ColumnName="templateAttributeId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TemplateAttributes">
-            <EntityTypeMapping TypeName="ClinicalModel.TemplateAttribute">
-              <MappingFragment StoreEntitySet="TemplateAttributes">
-                <ScalarProperty Name="OpTempId" ColumnName="opTempId" />
-                <ScalarProperty Name="Type" ColumnName="type" />
-                <ScalarProperty Name="PathAttribute" ColumnName="pathAttribute" />
-                <ScalarProperty Name="Attribute" ColumnName="attribute" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="ClinicalModel.User">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Access" ColumnName="Access" />
-                <ScalarProperty Name="Organization" ColumnName="organization" />
-                <ScalarProperty Name="Token" ColumnName="token" />
-                <ScalarProperty Name="Password" ColumnName="password" />
-                <ScalarProperty Name="Email" ColumnName="email" />
-                <ScalarProperty Name="UserName" ColumnName="userName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PatientRecords">
             <EntityTypeMapping TypeName="ClinicalModel.PatientRecord">
               <MappingFragment StoreEntitySet="PatientRecords">
-                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
-                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OpTempId" ColumnName="OpTempId" />
                 <ScalarProperty Name="PatientId" ColumnName="PatientId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Patients">
             <EntityTypeMapping TypeName="ClinicalModel.Patient">
               <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Birth" ColumnName="Birth" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
                 <ScalarProperty Name="EHR" ColumnName="EHR" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="Birth" ColumnName="Birth" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Doctors">
-            <EntityTypeMapping TypeName="ClinicalModel.Doctor">
-              <MappingFragment StoreEntitySet="Doctors">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="MedicId" ColumnName="MedicId" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="Birth" ColumnName="Birth" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <EntitySetMapping Name="TemplateAttributes">
+            <EntityTypeMapping TypeName="ClinicalModel.TemplateAttribute">
+              <MappingFragment StoreEntitySet="TemplateAttributes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+                <ScalarProperty Name="PathAttribute" ColumnName="PathAttribute" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="OpTempId" ColumnName="OpTempId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Features">
-            <EntityTypeMapping TypeName="ClinicalModel.Feature">
-              <MappingFragment StoreEntitySet="Features">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
-                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
-                <ScalarProperty Name="DisplayMenu" ColumnName="DisplayMenu" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="name" ColumnName="name" />
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ClinicalModel.User">
+              <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="Access" ColumnName="Access" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

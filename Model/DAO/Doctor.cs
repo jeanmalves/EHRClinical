@@ -28,8 +28,8 @@ namespace Model.DAO
         public int MedicId { get; set; }
         public int UserId { get; set; }
     
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PatientRecord> PatientRecords { get; set; }
-        public virtual User User { get; set; }
     }
 }

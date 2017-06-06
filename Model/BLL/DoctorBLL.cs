@@ -3,18 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Model.BLL
 {
-    public static class PatientBLL
+    public class DoctorBLL
     {
-        public static List<Patient> GetPatients()
+        public static List<Doctor> GetDoctors()
         {
             ClinicalEntities db = new ClinicalEntities();
 
             try
             {
-                return db.Patients.ToList();
+                var doctors = db.Doctors.Include(d => d.User);
+                return doctors.ToList();
             }
             catch (Exception)
             {
@@ -23,15 +26,15 @@ namespace Model.BLL
 
         }
 
-        public static Patient GetPatientById(int? patientId)
+        public static Doctor GetDoctorById(int? id)
         {
             try
             {
                 ClinicalEntities db = new ClinicalEntities();
 
-                Patient patient = db.Patients.Find(patientId);
+                Doctor doctor = db.Doctors.Find(id);
 
-                return patient;
+                return doctor;
             }
             catch (Exception)
             {
@@ -39,15 +42,15 @@ namespace Model.BLL
             }
         }
 
-        public static Patient GetPatientByUserId(int? userId)
+        public static Doctor GetDoctorByUserId(int? userId)
         {
             try
             {
                 ClinicalEntities db = new ClinicalEntities();
 
-                Patient patient = db.Patients.FirstOrDefault(p => p.UserId == userId);
+                Doctor doctor = db.Doctors.FirstOrDefault(d => d.UserId == userId);
 
-                return patient;
+                return doctor;
             }
             catch (Exception)
             {
@@ -55,7 +58,7 @@ namespace Model.BLL
             }
         }
 
-        public static bool AddPatient( Patient patient, User user)
+        public static bool AddDoctor(Doctor doctor, User user)
         {
             try
             {
@@ -63,9 +66,9 @@ namespace Model.BLL
 
                 var newUser = UserBLL.AddUser(user);
 
-                patient.UserId = newUser.Id;
+                doctor.UserId = newUser.Id;
 
-                db.Patients.Add(patient);
+                db.Doctors.Add(doctor);
                 db.SaveChanges();
 
                 return true;
@@ -76,15 +79,15 @@ namespace Model.BLL
             }
         }
 
-        public static bool UpdatePatient(Patient patient)
+        public static bool UpdateDoctor(Doctor doctor)
         {
             try
             {
                 ClinicalEntities db = new ClinicalEntities();
 
-                db.Entry(patient).State = EntityState.Modified;
+                db.Entry(doctor).State = EntityState.Modified;
                 db.SaveChanges();
-                
+
                 return true;
             }
             catch (Exception)
@@ -94,14 +97,14 @@ namespace Model.BLL
             }
         }
 
-        public static bool DeletePatient(int id)
+        public static bool DeleteDoctor(int id)
         {
             try
             {
                 ClinicalEntities db = new ClinicalEntities();
 
-                Patient patient = db.Patients.Find(id);
-                db.Patients.Remove(patient);
+                Doctor doctor = db.Doctors.Find(id);
+                db.Doctors.Remove(doctor);
                 db.SaveChanges();
 
                 return true;

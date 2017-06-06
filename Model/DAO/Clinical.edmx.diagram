@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e3fdeb0347a14a9380ea7aae8cc56dda" Name="Diagram1" ZoomLevel="95">
-        <EntityTypeShape EntityType="ClinicalModel.Archetype" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicalModel.OperationalsTemplate" Width="1.875" PointX="3.375" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicalModel.Data" PointX="3.125" PointY="0.5" Width="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicalModel.TemplateAttribute" Width="1.75" PointX="0.5" PointY="3.125" />
-        <EntityTypeShape EntityType="ClinicalModel.User" Width="1.5" PointX="8.5" PointY="1.75" />
-        <EntityTypeShape EntityType="ClinicalModel.PatientRecord" Width="1.5" PointX="6" PointY="0.5" />
-        <EntityTypeShape EntityType="ClinicalModel.Patient" Width="1.5" PointX="11.125" PointY="0.5" />
-        <AssociationConnector Association="ClinicalModel.FK_Data_PatientRecords" ></AssociationConnector>
-        <AssociationConnector Association="ClinicalModel.FK_Data_TemplateAttributes" />
-        <AssociationConnector Association="ClinicalModel.FK_PatientRecords_OperationalsTemplates" />
-        <AssociationConnector Association="ClinicalModel.FK_TemplateAttributes_OperationalsTemplates" />
-        <AssociationConnector Association="ClinicalModel.FK_PatientRecords_Patients" />
-        <EntityTypeShape EntityType="ClinicalModel.Doctor" Width="1.5" PointX="6" PointY="4.125" />
-        <AssociationConnector Association="ClinicalModel.FK_PatientRecords_Doctors" />
-        <AssociationConnector Association="ClinicalModel.FK_Doctors_ToUsers" />
-        <AssociationConnector Association="ClinicalModel.FK_Patients_ToUsers" />
-        <EntityTypeShape EntityType="ClinicalModel.Feature" Width="1.5" PointX="8.375" PointY="6.125" />
-        <AssociationConnector Association="ClinicalModel.FK_Features_ToOperationalsTemplates" />
-        <AssociationConnector Association="ClinicalModel.FK_Features_ToUsers" />
+      <Diagram DiagramId="1ed0c928fca448b0905a8bbe741011e8" Name="Diagram1">
+        <EntityTypeShape EntityType="ClinicalModel.Archetype" Width="1.5" PointX="7.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.Data" Width="1.5" PointX="2.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.Doctor" Width="1.5" PointX="10.625" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.Feature" Width="1.5" PointX="4.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.OperationalsTemplate" Width="2" PointX="1.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.PatientRecord" Width="1.5" PointX="4.625" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.Patient" Width="1.5" PointX="7.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.TemplateAttribute" Width="1.5" PointX="0.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.User" Width="1.5" PointX="7.75" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="ClinicalModel.FK_Data_PatientRecords" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_Data_TemplateAttributes" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_Doctors_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_PatientRecords_Doctors" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_Features_ToOperationalsTemplates" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_Features_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_PatientRecords_OperationalsTemplates" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_TemplateAttributes_OperationalsTemplates" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_PatientRecords_Patients" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicalModel.FK_Patients_ToUsers" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

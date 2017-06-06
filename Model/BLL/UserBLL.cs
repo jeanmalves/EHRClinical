@@ -1,17 +1,45 @@
-﻿using Model.DAO;
+﻿using EHRServerApi;
+using EHRServerApi.entity;
+using Model.DAO;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Model.BLL
 {
     public static class UserBLL
     {
-        public static User GetUsers()
+        public static List<DAO.User> GetUsers()
         {
-            var user = new User();
-            return user;
+            ClinicalEntities db = new ClinicalEntities();
+
+            try
+            {
+                return db.Users.ToList();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
 
-        public static User Authenticate(User u)
+        public static DAO.User GetUserById(int? id)
+        {
+            try
+            {
+                ClinicalEntities db = new ClinicalEntities();
+
+                var user = db.Users.Find(id);
+
+                return user;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static DAO.User Authenticate(DAO.User u)
         {
             ClinicalEntities db = new ClinicalEntities();
 
@@ -23,6 +51,19 @@ namespace Model.BLL
                               .Where(us => us.Password == u.Password)
                               .FirstOrDefault();
                 return user;
+
+                //EHRServer ehrServer = new EHRServer();
+                //var user = ehrServer.Login(u.UserName, u.Password);
+
+                //DAO.User userModel = new DAO.User();
+
+                //userModel.UserName = user.UserName;
+                //userModel.Email = user.Email;
+                //userModel.Organization = user.Organization;
+                //userModel.Token = user.Token;
+
+                //return userModel;
+
             }
             catch (System.Exception)
             {
@@ -31,5 +72,21 @@ namespace Model.BLL
 
         }
 
+        public static DAO.User AddUser(DAO.User user)
+        {
+            try
+            {
+                ClinicalEntities db = new ClinicalEntities();
+
+                var newUser = db.Users.Add(user);
+                db.SaveChanges();
+
+                return newUser;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
     }
 }

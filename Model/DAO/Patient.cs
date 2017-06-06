@@ -25,8 +25,8 @@ namespace Model.DAO
         public string LastName { get; set; }
         public System.DateTime Birth { get; set; }
         public short sex { get; set; }
-        public int UserId { get; set; }
         public int EHR { get; set; }
+        public int UserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PatientRecord> PatientRecords { get; set; }

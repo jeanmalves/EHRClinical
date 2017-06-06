@@ -26,14 +26,13 @@ namespace Model.DAO
         }
     
         public virtual DbSet<Archetype> Archetypes { get; set; }
-        public virtual DbSet<OperationalsTemplate> OperationalsTemplates { get; set; }
-        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
         public virtual DbSet<Data> Data1 { get; set; }
-        public virtual DbSet<TemplateAttribute> TemplateAttributes { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<PatientRecord> PatientRecords { get; set; }
-        public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<Doctor> Doctors { get; set; }
         public virtual DbSet<Feature> Features { get; set; }
+        public virtual DbSet<OperationalsTemplate> OperationalsTemplates { get; set; }
+        public virtual DbSet<PatientRecord> PatientRecords { get; set; }
+        public virtual DbSet<Patient> Patients { get; set; }
+        public virtual DbSet<TemplateAttribute> TemplateAttributes { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
