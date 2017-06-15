@@ -51,6 +51,20 @@ namespace EHRWebApplication.Controllers
                 Session["auth"] = "EHR_" + user.Access;
                 Session["Id"] = user.Id;
 
+                if (user.Access == (short)Roles.ADMIN)
+                {
+                    var features = FeatureBLL.GetFeatures()
+                                             .Where(f => f.DisplayMenu == 1)
+                                             .Select(f => f.name);
+
+                    ViewBag.menuList = features;
+                }
+
+                if (user.Access == (short)Roles.PATIENT)
+                {
+
+                }
+
                 return RedirectToAction("About", "Home");
             }
             else
