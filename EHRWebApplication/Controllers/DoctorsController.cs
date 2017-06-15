@@ -19,7 +19,17 @@ namespace EHRWebApplication.Controllers
         // GET: Doctors
         public ActionResult Index()
         {
-            var doctors = DoctorBLL.GetDoctors();
+            var doctors = DoctorBLL.GetDoctors()
+                .Select(d => new DoctorDetailsViewModel
+                {
+                    Id = d.Id,
+                    FirstName = d.FirstName,
+                    LastName = d.LastName,
+                    Birth = d.Birth,
+                    Sex = SexDictionary.getValue(d.Sex),
+                    CRMNumber = d.MedicId.ToString()
+                });
+
             return View(doctors);
         }
 
