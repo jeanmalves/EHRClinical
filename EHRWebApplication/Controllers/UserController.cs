@@ -92,18 +92,23 @@ namespace EHRWebApplication.Controllers
             if (Session["role"] != null)
             {
                 var role = Convert.ToInt32(Session["role"]);
-                
+                int id = 0;
+
                 if (role == (int) Roles.PATIENT)
                 {
-                    int id = Convert.ToInt32(Session["Id"]);
+                    id = Convert.ToInt32(Session["Id"]);
                     return RedirectToAction("Details", "Patients", new { id = id });
                 }
 
                 if (role == (int)Roles.DOCTOR)
                 {
-                    int id = Convert.ToInt32(Session["Id"]);
+                    id = Convert.ToInt32(Session["Id"]);
                     return RedirectToAction("Details", "Doctors", new { id = id, profile = true });
                 }
+                
+                id = Convert.ToInt32(Session["Id"]);
+
+                return RedirectToAction("Details", id);
             }
 
             return RedirectToAction("Login", "Auth");

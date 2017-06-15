@@ -14,8 +14,6 @@ namespace Model.DAO
         [Description("Paciente")]
         PATIENT,
         [Description("Médico")]
-        DOCTOR,
-        [Description("Atendente")]
-        ATENDENT
+        DOCTOR
     }
 }

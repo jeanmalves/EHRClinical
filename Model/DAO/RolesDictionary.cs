@@ -12,7 +12,7 @@ namespace Model.DAO
             rolesDictionary = new Dictionary<int, string>();
             rolesDictionary.Add((int) Roles.ADMIN, "Administrador");
             rolesDictionary.Add((int)Roles.PATIENT, "Paciente");
-            rolesDictionary.Add((int)Roles.DOCTOR, "Médico");
+            //rolesDictionary.Add((int)Roles.DOCTOR, "Médico");
         }
 
         public static Dictionary<int, string> RoleList

@@ -7,7 +7,7 @@
 	[TemplateId] INT NOT NULL, 
      
     [CreatedAt] DATETIME NOT NULL, 
-    [UpdatedAt] DATETIME NOT NULL, 
+    [UpdatedAt] DATETIME NULL, 
     [UserId] INT NOT NULL, 
     CONSTRAINT [FK_Features_ToOperationalsTemplates] FOREIGN KEY (TemplateId) REFERENCES OperationalsTemplates(Id), 
     CONSTRAINT [FK_Features_ToUsers] FOREIGN KEY (UserId) REFERENCES [Users](Id)

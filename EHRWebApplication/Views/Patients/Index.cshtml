@@ -1,13 +1,13 @@
-﻿@model IEnumerable<EHRWebApplication.Models.DoctorDetailsViewModel>
+﻿@model IEnumerable<EHRWebApplication.Models.PatientDetailsViewModel>
 
 @{
-    ViewBag.Title = "lista de Médicos";
+    ViewBag.Title = "Lista de Pacientes";
 }
 
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Cadastrar novo médico", "Create")
+    @Html.ActionLink("Cadatrar novo paciente", "Create")
 </p>
 <table class="table">
     <tr>
@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.Sex)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CRMNumber)
+            @Html.DisplayNameFor(model => model.EhrNumber)
         </th>
         <th></th>
     </tr>
@@ -44,10 +44,7 @@
             @Html.DisplayFor(modelItem => item.Sex)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CRMNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.UserName)
+            @Html.DisplayFor(modelItem => item.EhrNumber)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |

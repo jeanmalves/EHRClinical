@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\DoctorBLL.cs" />
+    <Compile Include="BLL\FeatureBLL.cs" />
     <Compile Include="BLL\PatientBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Class1.cs" />
@@ -137,6 +138,10 @@
       <DependentUpon>Clinical.edmx</DependentUpon>
       <LastGenOutput>Clinical.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DATA\Archetypes\" />
+    <Folder Include="DATA\Templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
