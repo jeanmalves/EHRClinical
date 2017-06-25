@@ -57,6 +57,7 @@
     <Compile Include="BLL\DoctorBLL.cs" />
     <Compile Include="BLL\FeatureBLL.cs" />
     <Compile Include="BLL\PatientBLL.cs" />
+    <Compile Include="BLL\RoleGroupBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DAO\Archetype.cs">
@@ -86,6 +87,9 @@
     <Compile Include="DAO\Feature.cs">
       <DependentUpon>Clinical.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\FeatureGroup.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\OperationalsTemplate.cs">
       <DependentUpon>Clinical.tt</DependentUpon>
     </Compile>
@@ -97,6 +101,9 @@
     </Compile>
     <Compile Include="DAO\Roles.cs" />
     <Compile Include="DAO\RolesDictionary.cs" />
+    <Compile Include="DAO\RolesGroup.cs">
+      <DependentUpon>Clinical.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Sex.cs" />
     <Compile Include="DAO\SexDictionary.cs" />
     <Compile Include="DAO\TemplateAttribute.cs">

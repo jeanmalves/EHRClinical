@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Model.BLL;
+using System.Collections.Generic;
 
 namespace Model.DAO
 {
@@ -10,9 +11,13 @@ namespace Model.DAO
         public RolesDictionary()
         {
             rolesDictionary = new Dictionary<int, string>();
-            rolesDictionary.Add((int) Roles.ADMIN, "Administrador");
-            rolesDictionary.Add((int)Roles.PATIENT, "Paciente");
-            //rolesDictionary.Add((int)Roles.DOCTOR, "Médico");
+
+            var roles = RoleGroupBLL.GetRolesGroup();
+
+            foreach (var role in roles)
+            {
+                rolesDictionary.Add(role.Id, role.Description);
+            }
         }
 
         public static Dictionary<int, string> RoleList
@@ -25,6 +30,11 @@ namespace Model.DAO
                 }
                 return rolesDictionary;
             }
+        }
+
+        public static string getValue(short key)
+        {
+            return RoleList[key];
         }
     }
 }

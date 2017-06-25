@@ -31,7 +31,9 @@ namespace Model.BLL
             {
                 var features = db.Features
                                  .Where(f => f.DisplayMenu == 1)
+                                 .Where(f => f.FeatureGroups.Any(g => g.RoleGroupID == Role))   
                                  .ToList();
+
                 return features;
             }
             catch (System.Exception)

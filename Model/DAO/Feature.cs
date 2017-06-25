@@ -14,16 +14,24 @@ namespace Model.DAO
     
     public partial class Feature
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Feature()
+        {
+            this.FeatureGroups = new HashSet<FeatureGroup>();
+        }
+    
         public int Id { get; set; }
         public string name { get; set; }
         public string Description { get; set; }
         public Nullable<short> DisplayMenu { get; set; }
         public int TemplateId { get; set; }
         public System.DateTime CreatedAt { get; set; }
-        public System.DateTime UpdatedAt { get; set; }
+        public Nullable<System.DateTime> UpdatedAt { get; set; }
         public int UserId { get; set; }
     
         public virtual OperationalsTemplate OperationalsTemplate { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FeatureGroup> FeatureGroups { get; set; }
     }
 }

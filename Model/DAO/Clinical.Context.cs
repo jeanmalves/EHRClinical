@@ -34,5 +34,7 @@ namespace Model.DAO
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<TemplateAttribute> TemplateAttributes { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<FeatureGroup> FeatureGroups { get; set; }
+        public virtual DbSet<RolesGroup> RolesGroups { get; set; }
     }
 }

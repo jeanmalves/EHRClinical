@@ -12,31 +12,22 @@ namespace Model.DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class RolesGroup
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public RolesGroup()
         {
-            this.Doctors = new HashSet<Doctor>();
-            this.Features = new HashSet<Feature>();
-            this.Patients = new HashSet<Patient>();
+            this.FeatureGroups = new HashSet<FeatureGroup>();
+            this.Users = new HashSet<User>();
         }
     
         public int Id { get; set; }
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Token { get; set; }
-        public string Organization { get; set; }
-        public short Status { get; set; }
-        public int RoleGroupID { get; set; }
+        public string Role { get; set; }
+        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Doctor> Doctors { get; set; }
+        public virtual ICollection<FeatureGroup> FeatureGroups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feature> Features { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Patient> Patients { get; set; }
-        public virtual RolesGroup RolesGroup { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

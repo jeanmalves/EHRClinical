@@ -47,8 +47,9 @@ namespace Model.BLL
             {
                 var user = db.Users
                               .Where(us => us.UserName == u.UserName)
-                              .Where(us => us.Access == u.Access)
+                              .Where(us => us.RoleGroupID == u.RoleGroupID)
                               .Where(us => us.Password == u.Password)
+                              .Where(us => us.Status == 1)
                               .FirstOrDefault();
                 return user;
 
