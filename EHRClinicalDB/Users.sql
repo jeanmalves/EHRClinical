@@ -6,6 +6,7 @@
     [Password] NCHAR(8) NOT NULL, 
     [Token] VARCHAR(MAX) NULL, 
     [Organization] NCHAR(10) NULL, 
-    [Access] SMALLINT NOT NULL, 
-    [Status] SMALLINT NOT NULL DEFAULT 0
+    [RoleGroupID] INT NOT NULL, 
+    [Status] SMALLINT NOT NULL DEFAULT 0, 
+    CONSTRAINT [FK_Users_ToRolesGroup] FOREIGN KEY (RoleGroupID) REFERENCES RolesGroup(Id)
 )

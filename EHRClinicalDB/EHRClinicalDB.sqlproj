@@ -68,6 +68,8 @@
     <Build Include="PatientRecords.sql" />
     <Build Include="Doctors.sql" />
     <Build Include="Features.sql" />
+    <Build Include="FeatureGroup.sql" />
+    <Build Include="RolesGroup.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="EHRClinicalDB.refactorlog" />
