@@ -12,7 +12,7 @@ using Model.BLL;
 
 namespace EHRWebApplication.Controllers
 {
-    public class PatientsController : Controller
+    public class PatientsController : MainController
     {
         private ClinicalEntities db = new ClinicalEntities();
 
@@ -90,7 +90,7 @@ namespace EHRWebApplication.Controllers
                 user.Email = User.Email;
                 user.UserName = User.UserName;
                 user.Password = User.Password;
-                user.Access = (short) Roles.PATIENT;
+                user.RoleGroupID = (short) Roles.PATIENT;
                 user.Status = 1;
 
                 bool create = PatientBLL.AddPatient(patient, user);

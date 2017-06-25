@@ -98,7 +98,7 @@ namespace EHRWebApplication.Controllers
                 user.Email = User.Email;
                 user.UserName = User.UserName;
                 user.Password = User.Password;
-                user.Access = (short)Roles.DOCTOR;
+                user.RoleGroupID = (short)Roles.DOCTOR;
                 user.Status = 1;
 
                 bool create = DoctorBLL.AddDoctor(doctor, user);

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace EHRWebApplication.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : MainController
     {
         public ActionResult Index()
         {
