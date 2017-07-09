@@ -85,10 +85,22 @@ namespace Model.BLL
             {
                 ClinicalEntities db = new ClinicalEntities();
 
-                db.Entry(doctor).State = EntityState.Modified;
-                db.SaveChanges();
+                var doc = db.Doctors.Find(doctor.Id);
 
-                return true;
+                if (doc != null)
+                {
+                    doc.FirstName = doctor.FirstName;
+                    doc.LastName = doctor.LastName;
+                    doc.Birth = doctor.Birth;
+                    doc.Sex = doctor.Sex;
+                    doc.MedicId = doctor.MedicId;
+
+                    db.SaveChanges();
+
+                    return true;
+                }
+
+                return false;
             }
             catch (Exception)
             {

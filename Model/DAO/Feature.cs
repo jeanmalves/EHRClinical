@@ -21,13 +21,14 @@ namespace Model.DAO
         }
     
         public int Id { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public Nullable<short> DisplayMenu { get; set; }
         public int TemplateId { get; set; }
         public System.DateTime CreatedAt { get; set; }
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public int UserId { get; set; }
+        public short status { get; set; }
     
         public virtual OperationalsTemplate OperationalsTemplate { get; set; }
         public virtual User User { get; set; }

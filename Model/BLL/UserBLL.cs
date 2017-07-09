@@ -89,5 +89,34 @@ namespace Model.BLL
                 throw;
             }
         }
+
+        public static bool updateUser(DAO.User user)
+        {
+            try
+            {
+                ClinicalEntities db = new ClinicalEntities();
+                
+                var updateUser = db.Users.Find(user.Id);
+
+                if (updateUser != null)
+                {
+                    updateUser.UserName = user.UserName;
+
+                    if (!string.IsNullOrEmpty(user.Password))
+                    {
+                        updateUser.Password = user.Password;
+                    }
+                }
+                
+                db.SaveChanges();
+                return true;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 }

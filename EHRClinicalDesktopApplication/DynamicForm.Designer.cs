@@ -1,6 +1,6 @@
 ﻿namespace EHRClinicalDesktopApplication
 {
-    partial class MainForm
+    partial class DynamicForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuLoged = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
-            // menuLoged
-            // 
-            this.menuLoged.Location = new System.Drawing.Point(0, 0);
-            this.menuLoged.Name = "menuLoged";
-            this.menuLoged.Size = new System.Drawing.Size(873, 24);
-            this.menuLoged.TabIndex = 1;
-            this.menuLoged.Text = "menuStrip1";
-            this.menuLoged.Visible = false;
-            // 
-            // MainForm
+            // DynamicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 488);
-            this.Controls.Add(this.menuLoged);
-            this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuLoged;
-            this.Name = "MainForm";
-            this.Text = "EHRClinical";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "DynamicForm";
+            this.Text = "DynamicForm";
+            this.Load += new System.EventHandler(this.DynamicForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuLoged;
     }
 }

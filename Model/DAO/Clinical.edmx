@@ -55,6 +55,7 @@
           <Property Name="CreatedAt" Type="datetime" Nullable="false" />
           <Property Name="UpdatedAt" Type="datetime" />
           <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="status" Type="smallint" Nullable="false" />
         </EntityType>
         <EntityType Name="OperationalsTemplates">
           <Key>
@@ -382,7 +383,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DisplayMenu" Type="Int16" />
           <Property Name="TemplateId" Type="Int32" Nullable="false" />
@@ -392,6 +393,7 @@
           <NavigationProperty Name="OperationalsTemplate" Relationship="Self.FK_Features_ToOperationalsTemplates" FromRole="Features" ToRole="OperationalsTemplates" />
           <NavigationProperty Name="User" Relationship="Self.FK_Features_ToUsers" FromRole="Features" ToRole="Users" />
           <NavigationProperty Name="FeatureGroups" Relationship="ClinicalModel.FK_FeatureGroup_ToFeature" FromRole="Feature" ToRole="FeatureGroup" />
+          <Property Name="status" Type="Int16" Nullable="false" />
         </EntityType>
         <EntityType Name="OperationalsTemplate">
           <Key>
@@ -745,8 +747,9 @@
           <EntitySetMapping Name="Features">
             <EntityTypeMapping TypeName="ClinicalModel.Feature">
               <MappingFragment StoreEntitySet="Features">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Name" ColumnName="name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DisplayMenu" ColumnName="DisplayMenu" />
                 <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />

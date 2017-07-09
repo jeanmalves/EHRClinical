@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Model.BLL;
+using Model.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,10 +58,36 @@ namespace EHRClinicalDesktopApplication
             }
         }
 
-        public void ShowMenu(String menu)
+        public void ShowMenu(string menu, List<Feature> features)
         {
             if (menu == "menuLoged")
             {
+                foreach (var item in features)
+                {
+                    var menuStripItem = new ToolStripMenuItem(item.Name);
+
+                    menuStripItem.Name = item.Name;
+                    menuStripItem.Tag = item.OperationalsTemplate;
+
+                    if (item.OperationalsTemplate.Name == "Profile")
+                    {
+                        menuStripItem.Click += new EventHandler(ProfileStripMenuItem_Click);
+                    }
+                    else
+                    {
+                        menuStripItem.Click += new EventHandler(MenuItemClick);
+                    }
+
+                    menuLoged.Items.Add(menuStripItem);
+                }
+
+                var sairStripMenuItem = new ToolStripMenuItem("sairStripMenuItem");
+
+                sairStripMenuItem.Name = "sairStripMenuItem";
+                sairStripMenuItem.Text = "Sair";
+                sairStripMenuItem.Click += new EventHandler(sairToolStripMenuItem_Click);
+
+                menuLoged.Items.Add(sairStripMenuItem);
                 menuLoged.Visible = true;
             }
         }
@@ -79,6 +107,8 @@ namespace EHRClinicalDesktopApplication
             UserName = string.Empty;
             UserEmail = string.Empty;
             RoleUser = 0;
+
+            menuLoged.Items.Clear();
         }
 
         public void CloseWindows()
@@ -118,6 +148,31 @@ namespace EHRClinicalDesktopApplication
             login.MdiParent = this;
             login.Show();
 
+        }
+
+        private void ProfileStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseActiveWindow();
+
+            var doctorRole = RoleGroupBLL.GetRoleGroupByRole("DOCTOR");
+
+            if (RoleUser == doctorRole.Id)
+            {
+                FormDoctor formDoctor = new FormDoctor(this);
+                formDoctor.MdiParent = this;
+                formDoctor.Show();
+            }
+        }
+
+        private void MenuItemClick(object sender, EventArgs e)
+        {
+            string sFormName = ((ToolStripMenuItem)sender).Name.ToString();
+
+            var opt = ((ToolStripMenuItem)sender).Tag;
+
+            var dynamicForm = new DynamicForm(this, opt);
+            dynamicForm.MdiParent = this;
+            dynamicForm.Show();
         }
     }
 }

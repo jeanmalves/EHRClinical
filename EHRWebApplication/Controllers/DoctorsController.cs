@@ -12,7 +12,7 @@ using Model.BLL;
 
 namespace EHRWebApplication.Controllers
 {
-    public class DoctorsController : Controller
+    public class DoctorsController : MainController
     {
         private ClinicalEntities db = new ClinicalEntities();
 

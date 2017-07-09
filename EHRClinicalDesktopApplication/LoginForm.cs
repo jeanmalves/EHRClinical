@@ -45,11 +45,15 @@ namespace EHRClinicalDesktopApplication
                 if (logedUser != null)
                 {
                     FormParent.SetLoginUser();
-                    FormParent.ShowMenu("menuLoged");
 
-                    FormParent.UserId = user.Id;
-                    FormParent.UserEmail = user.Email;
-                    FormParent.UserName = user.UserName;
+                    var features = FeatureBLL.GetFeaturesByRole(role.Id);
+                    
+                    FormParent.ShowMenu("menuLoged", features);
+
+                    FormParent.UserId = logedUser.Id;
+                    FormParent.UserEmail = logedUser.Email;
+                    FormParent.UserName = logedUser.UserName;
+                    FormParent.RoleUser = logedUser.RoleGroupID;
                     this.Close();
                 }
                 else
