@@ -18,6 +18,7 @@ namespace Model.DAO
         public TemplateAttribute()
         {
             this.Data = new HashSet<Data>();
+            this.DataListAttributes = new HashSet<DataListAttribute>();
         }
     
         public int Id { get; set; }
@@ -29,5 +30,7 @@ namespace Model.DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Data> Data { get; set; }
         public virtual OperationalsTemplate OperationalsTemplate { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DataListAttribute> DataListAttributes { get; set; }
     }
 }

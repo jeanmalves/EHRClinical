@@ -36,5 +36,6 @@ namespace Model.DAO
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<FeatureGroup> FeatureGroups { get; set; }
         public virtual DbSet<RolesGroup> RolesGroups { get; set; }
+        public virtual DbSet<DataListAttribute> DataListAttributes { get; set; }
     }
 }

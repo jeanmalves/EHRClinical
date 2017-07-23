@@ -23,6 +23,16 @@
           <Property Name="Value" Type="varchar(max)" Nullable="false" />
           <Property Name="PatientRecordId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="DataListAttribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Key" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Term" Type="varchar" MaxLength="20" />
+          <Property Name="AttributeId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Doctors">
           <Key>
             <PropertyRef Name="Id" />
@@ -140,6 +150,18 @@
             </Principal>
             <Dependent Role="Data">
               <PropertyRef Name="TemplateAttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DataListAttribute_ToTemplateAttributes">
+          <End Role="TemplateAttributes" Type="Self.TemplateAttributes" Multiplicity="1" />
+          <End Role="DataListAttribute" Type="Self.DataListAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TemplateAttributes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DataListAttribute">
+              <PropertyRef Name="AttributeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -278,6 +300,7 @@
         <EntityContainer Name="ClinicalModelStoreContainer">
           <EntitySet Name="Archetypes" EntityType="Self.Archetypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DataListAttribute" EntityType="Self.DataListAttribute" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FeatureGroup" EntityType="Self.FeatureGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Features" EntityType="Self.Features" Schema="dbo" store:Type="Tables" />
@@ -294,6 +317,10 @@
           <AssociationSet Name="FK_Data_TemplateAttributes" Association="Self.FK_Data_TemplateAttributes">
             <End Role="TemplateAttributes" EntitySet="TemplateAttributes" />
             <End Role="Data" EntitySet="Data" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DataListAttribute_ToTemplateAttributes" Association="Self.FK_DataListAttribute_ToTemplateAttributes">
+            <End Role="TemplateAttributes" EntitySet="TemplateAttributes" />
+            <End Role="DataListAttribute" EntitySet="DataListAttribute" />
           </AssociationSet>
           <AssociationSet Name="FK_Doctors_ToUsers" Association="Self.FK_Doctors_ToUsers">
             <End Role="Users" EntitySet="Users" />
@@ -446,6 +473,7 @@
           <Property Name="OpTempId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Data" Relationship="Self.FK_Data_TemplateAttributes" FromRole="TemplateAttributes" ToRole="Data" />
           <NavigationProperty Name="OperationalsTemplate" Relationship="Self.FK_TemplateAttributes_OperationalsTemplates" FromRole="TemplateAttributes" ToRole="OperationalsTemplates" />
+          <NavigationProperty Name="DataListAttributes" Relationship="ClinicalModel.FK_DataListAttribute_ToTemplateAttributes" FromRole="TemplateAttribute" ToRole="DataListAttribute" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -648,6 +676,11 @@
             <End Role="RolesGroup" EntitySet="RolesGroups" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
+          <EntitySet Name="DataListAttributes" EntityType="ClinicalModel.DataListAttribute" />
+          <AssociationSet Name="FK_DataListAttribute_ToTemplateAttributes" Association="ClinicalModel.FK_DataListAttribute_ToTemplateAttributes">
+            <End Role="TemplateAttribute" EntitySet="TemplateAttributes" />
+            <End Role="DataListAttribute" EntitySet="DataListAttributes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="FeatureGroup">
           <Key>
@@ -702,6 +735,29 @@
             </Principal>
             <Dependent Role="User">
               <PropertyRef Name="RoleGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DataListAttribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AttributeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TemplateAttribute" Relationship="ClinicalModel.FK_DataListAttribute_ToTemplateAttributes" FromRole="DataListAttribute" ToRole="TemplateAttribute" />
+          <Property Name="Term" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_DataListAttribute_ToTemplateAttributes">
+          <End Type="ClinicalModel.TemplateAttribute" Role="TemplateAttribute" Multiplicity="1" />
+          <End Type="ClinicalModel.DataListAttribute" Role="DataListAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TemplateAttribute">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DataListAttribute">
+              <PropertyRef Name="AttributeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -832,6 +888,17 @@
               <MappingFragment StoreEntitySet="RolesGroup">
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DataListAttributes">
+            <EntityTypeMapping TypeName="ClinicalModel.DataListAttribute">
+              <MappingFragment StoreEntitySet="DataListAttribute">
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="AttributeId" ColumnName="AttributeId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

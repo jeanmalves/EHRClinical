@@ -6,13 +6,13 @@
     <edmx:Diagrams>
       <Diagram DiagramId="1ed0c928fca448b0905a8bbe741011e8" Name="Diagram1">
         <EntityTypeShape EntityType="ClinicalModel.Archetype" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicalModel.Data" Width="1.5" PointX="1.375" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicalModel.Doctor" Width="1.5" PointX="3.875" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.Data" Width="1.5" PointX="2.625" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.Doctor" Width="1.5" PointX="4.5" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicalModel.Feature" Width="1.5" PointX="6.125" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicalModel.OperationalsTemplate" Width="2" PointX="2.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.OperationalsTemplate" Width="2" PointX="2.875" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicalModel.PatientRecord" Width="1.5" PointX="4.625" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicalModel.Patient" Width="1.5" PointX="6.125" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicalModel.TemplateAttribute" Width="1.5" PointX="0.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.Patient" Width="1.5" PointX="6.625" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicalModel.TemplateAttribute" Width="1.5" PointX="1" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicalModel.User" Width="1.5" PointX="10.125" PointY="5.25" IsExpanded="true" />
         <AssociationConnector Association="ClinicalModel.FK_Data_PatientRecords" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicalModel.FK_Data_TemplateAttributes" ManuallyRouted="false" />
@@ -31,6 +31,8 @@
         <AssociationConnector Association="ClinicalModel.FK_FeatureGroup_ToFeature" />
         <AssociationConnector Association="ClinicalModel.FK_FeatureGroup_ToRoleGroup" />
         <AssociationConnector Association="ClinicalModel.FK_Users_ToRolesGroup" />
+        <EntityTypeShape EntityType="ClinicalModel.DataListAttribute" Width="1.5" PointX="0.5" PointY="8" />
+        <AssociationConnector Association="ClinicalModel.FK_DataListAttribute_ToTemplateAttributes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
