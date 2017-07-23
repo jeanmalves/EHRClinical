@@ -1,6 +1,7 @@
 ﻿using Model.BLL;
 using Model.DAO;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -101,14 +102,38 @@ namespace EHRClinicalDesktopApplication
             int idPatient = Convert.ToInt32(comboBoxPatient.SelectedValue.ToString());
             var patient = PatientBLL.GetPatientById(idPatient);
 
-            var doctor = DoctorBLL.GetDoctorById(FormParent.UserId);
+            var doctor = DoctorBLL.GetDoctorByUserId(FormParent.UserId);
 
+            var patientRecord = PatientRecordBLL.GetPatientRecordByPatientId(patient.Id);
+
+            if (patientRecord == null)
+            {
+                patientRecord = new PatientRecord();
+                patientRecord.OpTempId = dataTemplate.Id;
+                patientRecord.PatientId = patient.Id;
+                patientRecord.DoctorId = doctor.Id;
+                patientRecord.CreatedAt = DateTime.Now;
+
+                patientRecord = PatientRecordBLL.AddPatientRecord(patientRecord);
+            }
+
+            var dataAttributeList = new List<Data>();
+           
             foreach (var control in this.Controls)
             {
+                var dataAttribute = new Data();
+                
                 if (control.GetType() == typeof(TextBox))
                 {
                     var field = (TextBox)control;
                     var value = field.Text.ToString();
+
+                    var tempAttr = (TemplateAttribute)field.Tag;
+                    dataAttribute.TemplateAttributeId = tempAttr.Id;
+                    dataAttribute.Value = value;
+                    dataAttribute.PatientRecordId = patientRecord.Id;
+
+                    TemplateAttributeBLL.AddDataAttribute(dataAttribute);
                 }
 
                 if (control.GetType() == typeof(ComboBox))
@@ -118,14 +143,18 @@ namespace EHRClinicalDesktopApplication
                     if (field.Name != "comboBoxPatient")
                     {
                         var value = field.SelectedValue.ToString();
+
+                        var tempAttr = (TemplateAttribute)field.Tag;
+                        dataAttribute.TemplateAttributeId = tempAttr.Id;
+                        dataAttribute.Value = value;
+                        dataAttribute.PatientRecordId = patientRecord.Id;
+
+                        TemplateAttributeBLL.AddDataAttribute(dataAttribute);
                     }
                 }
-            }
 
-            // gravar o patient record
-            
-            // gravar os dados de cada atributo atrelado ao patient record
-            
+                
+            }
         }
     }
 }
