@@ -57,6 +57,7 @@
     <Compile Include="BLL\DoctorBLL.cs" />
     <Compile Include="BLL\FeatureBLL.cs" />
     <Compile Include="BLL\PatientBLL.cs" />
+    <Compile Include="BLL\PatientRecordBLL.cs" />
     <Compile Include="BLL\RoleGroupBLL.cs" />
     <Compile Include="BLL\TemplateAttributeBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
