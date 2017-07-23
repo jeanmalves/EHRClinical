@@ -61,35 +61,33 @@ namespace EHRClinicalDesktopApplication
 
             var binding = archetypeRoot.TermBindings;
 
-           /* string pa = "";
-            while ( archetypeRoot.Attributes.Count() > 0)
-            {
-                foreach (var item in archetypeRoot.Attributes)
-                {
-                    if(item.Children.Count() > 0)
-                    {
-                        foreach (var children in item.Children)
-                        {
-                            pa = pa + children.Path;
-                        }
-                    }
-                }
-            }
-
-            */
+            /* string pa = "";
+             while ( archetypeRoot.Attributes.Count() > 0)
+             {
+                 foreach (var item in archetypeRoot.Attributes)
+                 {
+                     if(item.Children.Count() > 0)
+                     {
+                         foreach (var children in item.Children)
+                         {
+                             pa = pa + children.Path;
+                         }
+                     }
+                 }
+             }*/
+             
 
             Path p = new Path("/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value");
             string currentName = p.Value;
             
             XmlReader xml2 = XmlReader.Create(@"C:\Users\Public\Documents\My Clinical Models\Sample Set\Archetypes\entry\observation\"+ archetypeRoot.ArchetypeId + ".xml");
-            
-            //Archetype ar = new Archetype();
-            //var hash = archetypeRoot.TermDefinitions.Item("at0004").Items.Item("text");
-            //ar.ReadXml(xml2);
-            
-           // var t = ar.Ontology.TermDefinition("en", "at0004") ;
 
+            OpenEhr.AM.Archetype.Archetype ar = new OpenEhr.AM.Archetype.Archetype();
+            var hash = archetypeRoot.TermDefinitions.Item("at0004").Items.Item("text");
+            ar.ReadXml(xml2);
             
+            var t = ar.Ontology.TermDefinition("en", "at0004") ;
+
         }
     }
 }

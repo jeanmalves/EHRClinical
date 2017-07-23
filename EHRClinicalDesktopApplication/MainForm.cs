@@ -168,8 +168,8 @@ namespace EHRClinicalDesktopApplication
         {
             string sFormName = ((ToolStripMenuItem)sender).Name.ToString();
 
-            var opt = ((ToolStripMenuItem)sender).Tag;
-
+            var opt = (OperationalsTemplate) ((ToolStripMenuItem)sender).Tag;
+            
             var dynamicForm = new DynamicForm(this, opt);
             dynamicForm.MdiParent = this;
             dynamicForm.Show();

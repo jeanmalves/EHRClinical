@@ -34,16 +34,17 @@ namespace EHRClinicalDesktopApplication
 
                 var doctor = DoctorBLL.GetDoctorByUserId(FormParent.UserId);
                 
+                var sexList = SexDictionary.SexList;
+                SexComboBox.DataSource = new BindingSource(sexList, null);
+                SexComboBox.DisplayMember = "Value";
+                SexComboBox.ValueMember = "key";
+
                 if (doctor != null)
                 {
                     textFirstName.Text = doctor.FirstName;
                     textLastName.Text = doctor.LastName;
                     textBirth.Text = doctor.Birth.ToString("dd/MM/yyyy");
 
-                    var sexList = SexDictionary.SexList;
-                    SexComboBox.DataSource = new BindingSource(sexList, null);
-                    SexComboBox.DisplayMember = "Value";
-                    SexComboBox.ValueMember = "key";
                     SexComboBox.SelectedValue = doctor.Sex;
 
                     textCRM.Text = doctor.MedicId.ToString();

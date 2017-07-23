@@ -89,6 +89,7 @@
             // 
             // textEmail
             // 
+            this.textEmail.Enabled = false;
             this.textEmail.Location = new System.Drawing.Point(129, 318);
             this.textEmail.Name = "textEmail";
             this.textEmail.ReadOnly = true;
@@ -173,6 +174,7 @@
             // 
             // SexComboBox
             // 
+            this.SexComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SexComboBox.FormattingEnabled = true;
             this.SexComboBox.Location = new System.Drawing.Point(130, 210);
             this.SexComboBox.Name = "SexComboBox";
