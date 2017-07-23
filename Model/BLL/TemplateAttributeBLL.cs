@@ -44,5 +44,21 @@ namespace Model.BLL
                 throw;
             }
         }
+
+        public static void AddDataAttribute(Data data)
+        {
+            try
+            {
+                ClinicalEntities db = new ClinicalEntities();
+                
+                db.Data1.Add(data);
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
