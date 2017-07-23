@@ -70,6 +70,7 @@
     <Build Include="Features.sql" />
     <Build Include="FeatureGroup.sql" />
     <Build Include="RolesGroup.sql" />
+    <Build Include="DataListAttribute.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="EHRClinicalDB.refactorlog" />
