@@ -103,15 +103,30 @@ namespace Model.BLL
             }
         }
 
-        public static bool UpdatePatient(Patient patient)
+        public static bool UpdatePatient(Patient pa, User user)
         {
             try
             {
                 ClinicalEntities db = new ClinicalEntities();
 
-                db.Entry(patient).State = EntityState.Modified;
+                var patient = db.Patients.Find(pa.Id);
+
+                patient.FirstName = pa.FirstName;
+                patient.LastName = pa.LastName;
+                patient.sex = pa.sex;
+                patient.Birth = pa.Birth;
+
+                var updateUser = db.Users.Find(user.Id);
+
+                updateUser.UserName = user.UserName;
+
+                if (!string.IsNullOrEmpty(user.Password))
+                {
+                    updateUser.Password = user.Password;
+                }
+
                 db.SaveChanges();
-                
+
                 return true;
             }
             catch (Exception)
