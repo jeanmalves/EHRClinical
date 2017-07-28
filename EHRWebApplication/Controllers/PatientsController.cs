@@ -34,14 +34,23 @@ namespace EHRWebApplication.Controllers
         }
 
         // GET: Patients/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, bool profile = false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var patient = PatientBLL.GetPatientById(id);
+            Patient patient;
+
+            if (profile)
+            {
+                patient = PatientBLL.GetPatientByUserId(id);
+            }
+            else
+            {
+                patient = PatientBLL.GetPatientById(id);
+            }
             
             if (patient == null)
             {
@@ -119,13 +128,15 @@ namespace EHRWebApplication.Controllers
                 return HttpNotFound();
             }
 
-            PatientViewModel patientVM = new PatientViewModel();
+            var patientVM = new PatientEditViewModel();
+            patientVM.Id = patient.Id;
             patientVM.FirstName = patient.FirstName;
             patientVM.LastName = patient.LastName;
             patientVM.Sex = patient.sex;
             patientVM.Birth = patient.Birth;
 
-            var userVM = new UserViewModel();
+            var userVM = new UserEditViewModel();
+            userVM.Id = patient.User.Id;
             userVM.UserName = patient.User.UserName;
             userVM.Password = patient.User.Password;
             userVM.Email = patient.User.Email;
@@ -141,16 +152,41 @@ namespace EHRWebApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Birth,sex,UserId,EHR")] Patient patient)
+        public ActionResult Edit(
+          //  [Bind(Include = "Id,FirstName,LastName,Birth,sex,UserId,EHR, UserName, Email, Password")]
+            PatientEditViewModel pa,
+            UserEditViewModel User)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(patient).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                pa.User = User;
+
+                Patient patient = new Patient();
+
+                patient.Id = pa.Id;
+                patient.FirstName = pa.FirstName;
+                patient.LastName = pa.LastName;
+                patient.sex = pa.Sex;
+                patient.Birth = (DateTime)pa.Birth;
+
+                User user = new User();
+
+                user.Id = User.Id;
+                user.Email = User.Email;
+                user.UserName = User.UserName;
+                user.Password = User.Password;
+
+
+                var updated = PatientBLL.UpdatePatient(patient, user);
+
+                if (updated)
+                {
+                    return RedirectToAction("Details");
+                }
             }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", patient.UserId);
-            return View(patient);
+
+            ViewBag.sexSelected = new SelectList(SexDictionary.SexList, "Key", "Value", pa.Sex);
+            return View(pa);
         }
 
         // GET: Patients/Delete/5

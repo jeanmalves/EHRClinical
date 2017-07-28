@@ -97,7 +97,7 @@ namespace EHRWebApplication.Controllers
                 if (role == (int) Roles.PATIENT)
                 {
                     id = Convert.ToInt32(Session["Id"]);
-                    return RedirectToAction("Details", "Patients", new { id = id });
+                    return RedirectToAction("Details", "Patients", new { id = id, profile = true });
                 }
 
                 if (role == (int)Roles.DOCTOR)
