@@ -1,45 +1,56 @@
-﻿@model Model.DAO.DataListAttribute
-@ViewBag.id
-@ViewBag.recordId
-@*<div>
-    <h4>DataListAttribute</h4>
+﻿@model EHRWebApplication.Models.PatientRecordDetailsViewModel
+
+@{
+    ViewBag.Title = "Detalhes - Consulta/Procedimento";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>@Model.OptName</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Key)
+            @Html.DisplayNameFor(model => model.CreatedAt)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Key)
+            @Html.DisplayFor(model => model.CreatedAt)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Value)
+            @Html.DisplayNameFor(model => model.Doctor)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Value)
+            @Html.DisplayFor(model => model.Doctor)
         </dd>
+        
+        @foreach (var item in Model.Data)
+        {
+            <dt>
+                @Html.DisplayFor(modelItem => item.TemplateAttribute.Attribute)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Term)
-        </dt>
+                if (item.TemplateAttribute.Type == "LIST") {
+                    
+                    var attribute = item.TemplateAttribute.DataListAttributes
+                                                    .Select(data => new { data.Value, data.AttributeId })
+                                                    .FirstOrDefault(data => data.AttributeId == item.TemplateAttributeId);
 
-        <dd>
-            @Html.DisplayFor(model => model.Term)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TemplateAttribute.Attribute)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TemplateAttribute.Attribute)
-        </dd>
-
+                    <dd>
+                        @Html.DisplayFor(modelItem => attribute.Value)
+                    </dd>
+                }
+                else
+                {
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Value)
+                    </dd>
+                }
+        }
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>*@
+    @Html.ActionLink("Voltar para a lista", "Index", new { id = Model.PatientId })
+</p>
