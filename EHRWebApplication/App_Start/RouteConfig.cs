@@ -16,6 +16,20 @@ namespace EHRWebApplication
             routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
+                "patientRecord",
+                "Patient/{id}/PatientRecords",
+                new { controller = "PatientRecords", action = "Index"},
+                new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
+                "patientRecordDetails",
+                "Patient/{id}/PatientRecords/{recordId}",
+                new { controller = "PatientRecords", action = "Details" },
+                new { id = @"\d+", recordId = @"\d+" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
