@@ -181,7 +181,7 @@ namespace EHRWebApplication.Controllers
 
                 if (updated)
                 {
-                    return RedirectToAction("Details");
+                    return RedirectToAction("Details", new { id = patient.Id });
                 }
             }
 
