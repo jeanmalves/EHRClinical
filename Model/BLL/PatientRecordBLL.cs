@@ -9,6 +9,22 @@ namespace Model.BLL
 {
     public class PatientRecordBLL
     {
+        public static PatientRecord GetPatientRecord(int id)
+        {
+            try
+            {
+                ClinicalEntities db = new ClinicalEntities();
+
+                var patientRecord = db.PatientRecords.Find(id);
+
+                return patientRecord;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static PatientRecord GetPatientRecordByPatientId(int? patientId)
         {
             try
@@ -18,6 +34,24 @@ namespace Model.BLL
                 var patientRecord = db.PatientRecords.FirstOrDefault(p => p.PatientId == patientId);
 
                 return patientRecord;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<PatientRecord> GetPatientRecordsByPatientId(int? patientId)
+        {
+            try
+            {
+                ClinicalEntities db = new ClinicalEntities();
+
+                var patientRecords = db.PatientRecords
+                                      .Where(p => p.PatientId == patientId)
+                                      .ToList();
+
+                return patientRecords;
             }
             catch (Exception)
             {

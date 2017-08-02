@@ -168,6 +168,7 @@
     </Compile>
     <Compile Include="Models\AuthViewModel.cs" />
     <Compile Include="Models\DoctorViewModel.cs" />
+    <Compile Include="Models\PatientRecordViewModel.cs" />
     <Compile Include="Models\PatientViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
