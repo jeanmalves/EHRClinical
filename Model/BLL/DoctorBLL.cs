@@ -79,7 +79,7 @@ namespace Model.BLL
             }
         }
 
-        public static bool UpdateDoctor(Doctor doctor)
+        public static bool UpdateDoctor(Doctor doctor, User user)
         {
             try
             {
@@ -95,9 +95,13 @@ namespace Model.BLL
                     doc.Sex = doctor.Sex;
                     doc.MedicId = doctor.MedicId;
 
-                    db.SaveChanges();
+                    var updateUser = UserBLL.updateUser(user);
 
-                    return true;
+                    if (updateUser)
+                    {
+                        db.SaveChanges();
+                        return true;
+                    }
                 }
 
                 return false;

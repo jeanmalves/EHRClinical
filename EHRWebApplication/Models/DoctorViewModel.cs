@@ -59,4 +59,35 @@ namespace EHRWebApplication.Models
 
         public User User { get; set; }
     }
+
+    public class DoctorEditViewModel
+    {
+        public int Id { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Display(Name = "Nome")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Display(Name = "Sobrenome")]
+        public string LastName { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Display(Name = "Data de nascimento")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime? Birth { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Display(Name = "Sexo")]
+        public short Sex { get; set; }
+
+        public Dictionary<short, string> SexList
+        {
+            get { return SexDictionary.SexList; }
+            set { }
+        }
+
+        public int MedicId { get; set; }
+
+        public UserEditViewModel User { get; set; }
+    }
 }

@@ -124,7 +124,7 @@ namespace EHRWebApplication.Controllers
                 return HttpNotFound();
             }
 
-            var doctorVM = new DoctorViewModel();
+            var doctorVM = new DoctorEditViewModel();
             doctorVM.Id = doctor.Id;
             doctorVM.FirstName = doctor.FirstName;
             doctorVM.LastName = doctor.LastName;
@@ -132,7 +132,8 @@ namespace EHRWebApplication.Controllers
             doctorVM.Sex = doctor.Sex;
             doctorVM.MedicId = doctor.MedicId;
 
-            var userVM = new UserViewModel();
+            var userVM = new UserEditViewModel();
+            userVM.Id = doctor.User.Id;
             userVM.UserName = doctor.User.UserName;
             userVM.Password = doctor.User.Password;
             userVM.Email = doctor.User.Email;
@@ -148,16 +149,37 @@ namespace EHRWebApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Birth,Sex,MedicId,UserId")] Doctor doctor)
+        public ActionResult Edit(DoctorEditViewModel doctorVM)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(doctor).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                Doctor doctor = new Doctor();
+
+                doctor.Id = doctorVM.Id;
+                doctor.FirstName = doctorVM.FirstName;
+                doctor.LastName = doctorVM.LastName;
+                doctor.Sex = doctorVM.Sex;
+                doctor.Birth = (DateTime)doctorVM.Birth;
+                doctor.MedicId = doctorVM.MedicId;
+
+                User user = new User();
+
+                user.Id = doctorVM.User.Id;
+                user.Email = doctorVM.User.Email;
+                user.UserName = doctorVM.User.UserName;
+                user.Password = doctorVM.User.Password;
+
+
+                var updated = DoctorBLL.UpdateDoctor(doctor, user);
+
+                if (updated)
+                {
+                    return RedirectToAction("Index");
+                }
             }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", doctor.UserId);
-            return View(doctor);
+
+            ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", doctorVM.User.Id);
+            return View(doctorVM);
         }
 
         // GET: Doctors/Delete/5
