@@ -104,18 +104,14 @@ namespace EHRClinicalDesktopApplication
 
             var doctor = DoctorBLL.GetDoctorByUserId(FormParent.UserId);
 
-            var patientRecord = PatientRecordBLL.GetPatientRecordByPatientId(patient.Id);
+            var patientRecord = new PatientRecord();
 
-            if (patientRecord == null)
-            {
-                patientRecord = new PatientRecord();
-                patientRecord.OpTempId = dataTemplate.Id;
-                patientRecord.PatientId = patient.Id;
-                patientRecord.DoctorId = doctor.Id;
-                patientRecord.CreatedAt = DateTime.Now;
+            patientRecord.OpTempId = dataTemplate.Id;
+            patientRecord.PatientId = patient.Id;
+            patientRecord.DoctorId = doctor.Id;
+            patientRecord.CreatedAt = DateTime.Now;
 
-                patientRecord = PatientRecordBLL.AddPatientRecord(patientRecord);
-            }
+            patientRecord = PatientRecordBLL.AddPatientRecord(patientRecord);
 
             var dataAttributeList = new List<Data>();
            

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -167,12 +168,49 @@ namespace EHRClinicalDesktopApplication
         private void MenuItemClick(object sender, EventArgs e)
         {
             string sFormName = ((ToolStripMenuItem)sender).Name.ToString();
-
-            var opt = (OperationalsTemplate) ((ToolStripMenuItem)sender).Tag;
             
-            var dynamicForm = new DynamicForm(this, opt);
-            dynamicForm.MdiParent = this;
-            dynamicForm.Show();
+            var opt = (OperationalsTemplate) ((ToolStripMenuItem)sender).Tag;
+
+            if (opt.IsController == 1)
+            {
+                Assembly frmAssembly = Assembly.LoadFile(Application.ExecutablePath);
+
+                foreach (Type type in frmAssembly.GetTypes())
+                {
+                    if (type.BaseType == typeof(Form))
+                    {
+                        if (type.Name == opt.Template)
+                        {
+                            object[] args = new object[] { this };
+
+                            Form frmShow = (Form)frmAssembly.CreateInstance(
+                                                                    type.ToString(),
+                                                                    false,
+                                                                    BindingFlags.CreateInstance,
+                                                                    null,
+                                                                    args,
+                                                                    null,
+                                                                    null);
+                            
+                            foreach (Form form in this.MdiChildren)
+                            {
+                                form.Close();
+                            }
+
+                            frmShow.MdiParent = this;
+                            frmShow.WindowState = FormWindowState.Maximized;
+                            frmShow.Show();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                var dynamicForm = new DynamicForm(this, opt);
+                dynamicForm.MdiParent = this;
+                dynamicForm.Show();
+            }
+
         }
     }
 }
