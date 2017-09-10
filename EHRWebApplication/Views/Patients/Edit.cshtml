@@ -82,10 +82,16 @@
         </div>
     </div>
 }
+@{
+    var role = (int)Session["role"];
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    if (role == 1)
+    {
+        <div>
+            @Html.ActionLink("Voltar para a lista", "Index")
+        </div>
+    }
+}
 
 @section Scripts {
     <script>
