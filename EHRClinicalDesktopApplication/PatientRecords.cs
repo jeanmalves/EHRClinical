@@ -1,4 +1,5 @@
 ﻿using Model.BLL;
+using Model.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,10 @@ namespace EHRClinicalDesktopApplication
     public partial class PatientRecords : Form
     {
         public MainForm FormParent { get; private set; }
+        public Doctor doctor { get; private set; }
         public PatientRecords(MainForm formParent)
         {
             InitializeComponent();
-            btnVisualizar.Visible = (dataGridPatientRecord.Rows.Count) > 0;
             FormParent = formParent;
         }
 
@@ -26,7 +27,7 @@ namespace EHRClinicalDesktopApplication
             this.WindowState = FormWindowState.Maximized;
             dataGridPatientRecord.AutoGenerateColumns = false;
 
-            var doctor = DoctorBLL.GetDoctorByUserId(FormParent.UserId);
+            doctor = DoctorBLL.GetDoctorByUserId(FormParent.UserId);
 
             try
             {
@@ -40,14 +41,11 @@ namespace EHRClinicalDesktopApplication
                                                              OptName = pr.OperationalsTemplate.Name
                                                          }).ToList();
 
-                /*dataGridPatientRecord.Columns.Add("CreatedAt", "Data");
-                dataGridPatientRecord.Columns.Add("Doctor", "Médico");
-                dataGridPatientRecord.Columns.Add("Patient", "Paciente");
-                dataGridPatientRecord.Columns.Add("OptName", "Consulta/procedimento");*/
                 dataGridPatientRecord.DataSource = null;
                 dataGridPatientRecord.DataSource = patientRecords;
                 dataGridPatientRecord.Refresh();
 
+                btnVisualizar.Visible = (dataGridPatientRecord.Rows.Count) > 0;
             }
             catch (Exception)
             {
@@ -68,6 +66,52 @@ namespace EHRClinicalDesktopApplication
 
             var dataDetails = new PatientRecordDetails(patientRecord);
             dataDetails.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            searchPatient();
+        }
+
+        private void searchPatient()
+        {
+            try
+            {
+                var patientRecords = PatientRecordBLL.GetPatientRecordsByTerm(doctor.Id, textSearch.Text)
+                                                         .Select(pr => new
+                                                         {
+                                                             Id = pr.Id,
+                                                             CreatedAt = pr.CreatedAt,
+                                                             Doctor = pr.Doctor.FirstName + " " + pr.Doctor.LastName,
+                                                             Patient = pr.Patient.FirstName + " " + pr.Patient.LastName,
+                                                             OptName = pr.OperationalsTemplate.Name
+                                                         }).ToList();
+
+
+                dataGridPatientRecord.DataSource = null;
+                dataGridPatientRecord.DataSource = patientRecords;
+                dataGridPatientRecord.Refresh();
+
+                if (patientRecords.Count == 0)
+                {
+                    MessageBox.Show("Não há dados para exibir.");
+                }
+
+                btnVisualizar.Visible = (dataGridPatientRecord.Rows.Count) > 0;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void textSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                searchPatient();
+            }
         }
     }
 }

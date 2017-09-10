@@ -33,11 +33,11 @@
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridPatientRecord = new System.Windows.Forms.DataGridView();
-            this.btnVisualizar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Consulta_procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVisualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPatientRecord)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(338, 20);
             this.textSearch.TabIndex = 18;
+            this.textSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSearch_KeyPress);
             // 
             // btnSearch
             // 
@@ -75,6 +76,7 @@
             this.btnSearch.TabIndex = 21;
             this.btnSearch.Text = "Pesquisar";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dataGridPatientRecord
             // 
@@ -94,16 +96,6 @@
             this.dataGridPatientRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPatientRecord.Size = new System.Drawing.Size(673, 150);
             this.dataGridPatientRecord.TabIndex = 22;
-            // 
-            // btnVisualizar
-            // 
-            this.btnVisualizar.Location = new System.Drawing.Point(624, 350);
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnVisualizar.TabIndex = 23;
-            this.btnVisualizar.Text = "visualizar";
-            this.btnVisualizar.UseVisualStyleBackColor = true;
-            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // Id
             // 
@@ -131,6 +123,16 @@
             this.Consulta_procedimento.HeaderText = "Consulta/procedimento";
             this.Consulta_procedimento.Name = "Consulta_procedimento";
             this.Consulta_procedimento.Width = 350;
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Location = new System.Drawing.Point(624, 350);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnVisualizar.TabIndex = 23;
+            this.btnVisualizar.Text = "visualizar";
+            this.btnVisualizar.UseVisualStyleBackColor = true;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // PatientRecords
             // 
