@@ -185,7 +185,6 @@
             // 
             this.textCRM.Location = new System.Drawing.Point(131, 245);
             this.textCRM.Name = "textCRM";
-            this.textCRM.PasswordChar = '*';
             this.textCRM.Size = new System.Drawing.Size(151, 20);
             this.textCRM.TabIndex = 68;
             // 
