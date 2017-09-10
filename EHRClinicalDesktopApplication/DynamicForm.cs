@@ -32,7 +32,7 @@ namespace EHRClinicalDesktopApplication
             label.Text = dataTemplate.Name;
             Controls.Add(label);
             
-            int height = 110;
+            int height = 150;
 
             var patients = PatientBLL.GetPatientsList();
             comboBoxPatient.DataSource = patients;
@@ -99,58 +99,82 @@ namespace EHRClinicalDesktopApplication
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int idPatient = Convert.ToInt32(comboBoxPatient.SelectedValue.ToString());
-            var patient = PatientBLL.GetPatientById(idPatient);
-
-            var doctor = DoctorBLL.GetDoctorByUserId(FormParent.UserId);
-
-            var patientRecord = new PatientRecord();
-
-            patientRecord.OpTempId = dataTemplate.Id;
-            patientRecord.PatientId = patient.Id;
-            patientRecord.DoctorId = doctor.Id;
-            patientRecord.CreatedAt = DateTime.Now;
-
-            patientRecord = PatientRecordBLL.AddPatientRecord(patientRecord);
-
-            var dataAttributeList = new List<Data>();
-           
-            foreach (var control in this.Controls)
+            try
             {
-                var dataAttribute = new Data();
-                
-                if (control.GetType() == typeof(TextBox))
+                int idPatient = Convert.ToInt32(comboBoxPatient.SelectedValue.ToString());
+                var patient = PatientBLL.GetPatientById(idPatient);
+
+                var doctor = DoctorBLL.GetDoctorByUserId(FormParent.UserId);
+
+                var patientRecord = new PatientRecord();
+
+                patientRecord.OpTempId = dataTemplate.Id;
+                patientRecord.PatientId = patient.Id;
+                patientRecord.DoctorId = doctor.Id;
+                patientRecord.CreatedAt = DateTime.Now;
+
+                patientRecord = PatientRecordBLL.AddPatientRecord(patientRecord);
+
+                var dataAttributeList = new List<Data>();
+
+                foreach (var control in this.Controls)
                 {
-                    var field = (TextBox)control;
-                    var value = field.Text.ToString();
+                    var dataAttribute = new Data();
 
-                    var tempAttr = (TemplateAttribute)field.Tag;
-                    dataAttribute.TemplateAttributeId = tempAttr.Id;
-                    dataAttribute.Value = value;
-                    dataAttribute.PatientRecordId = patientRecord.Id;
-
-                    TemplateAttributeBLL.AddDataAttribute(dataAttribute);
-                }
-
-                if (control.GetType() == typeof(ComboBox))
-                {
-                    var field = (ComboBox)control;
-
-                    if (field.Name != "comboBoxPatient")
+                    if (control.GetType() == typeof(TextBox))
                     {
-                        var value = field.SelectedValue.ToString();
+                        var field = (TextBox)control;
 
-                        var tempAttr = (TemplateAttribute)field.Tag;
-                        dataAttribute.TemplateAttributeId = tempAttr.Id;
-                        dataAttribute.Value = value;
-                        dataAttribute.PatientRecordId = patientRecord.Id;
+                        if (field.Name != "textSearch")
+                        {
+                            var value = field.Text.ToString();
 
-                        TemplateAttributeBLL.AddDataAttribute(dataAttribute);
+                            var tempAttr = (TemplateAttribute)field.Tag;
+                            dataAttribute.TemplateAttributeId = tempAttr.Id;
+                            dataAttribute.Value = value;
+                            dataAttribute.PatientRecordId = patientRecord.Id;
+
+                            TemplateAttributeBLL.AddDataAttribute(dataAttribute);
+                        }
+                    }
+
+                    if (control.GetType() == typeof(ComboBox))
+                    {
+                        var field = (ComboBox)control;
+
+                        if (field.Name != "comboBoxPatient")
+                        {
+                            var value = field.SelectedValue.ToString();
+
+                            var tempAttr = (TemplateAttribute)field.Tag;
+                            dataAttribute.TemplateAttributeId = tempAttr.Id;
+                            dataAttribute.Value = value;
+                            dataAttribute.PatientRecordId = patientRecord.Id;
+
+                            TemplateAttributeBLL.AddDataAttribute(dataAttribute);
+                        }
                     }
                 }
 
-                
+                MessageBox.Show("Consulta/procedimento gravado com sucesso.");
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao gravar os dados da consulta/procedimento.");
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            getPatientList();
+        }
+
+        private void getPatientList()
+        {
+            var patients = PatientBLL.GetPatientsListByTerm(textSearch.Text);
+            comboBoxPatient.DataSource = patients;
+            comboBoxPatient.DisplayMember = "Name";
+            comboBoxPatient.ValueMember = "Value";
         }
     }
 }
