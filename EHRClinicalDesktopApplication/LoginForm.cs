@@ -30,6 +30,8 @@ namespace EHRClinicalDesktopApplication
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             if (!string.IsNullOrEmpty(textUser.Text) && !string.IsNullOrEmpty(textPassword.Text))
             {
                 User user = new User();
@@ -54,16 +56,22 @@ namespace EHRClinicalDesktopApplication
                     FormParent.UserEmail = logedUser.Email;
                     FormParent.UserName = logedUser.UserName;
                     FormParent.RoleUser = logedUser.RoleGroupID;
+
+                    Cursor.Current = Cursors.Default;
                     this.Close();
                 }
                 else
                 {
+                    Cursor.Current = Cursors.Default;
+
                     MessageBox.Show("Um ou mais campos preenchidos estão incorretos ou o usuário não está ativo.");
                 }
 
             }
             else
             {
+                Cursor.Current = Cursors.Default;
+
                 MessageBox.Show("É preciso informar um usuário, senha e selecionar o tipo.");
             }
 
