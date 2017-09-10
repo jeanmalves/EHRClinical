@@ -77,6 +77,25 @@ namespace Model.BLL
             }
         }
 
+        public static List<PatientRecord> GetPatientRecordsByTerm(int? doctorId, string term)
+        {
+            try
+            {
+                ClinicalEntities db = new ClinicalEntities();
+
+                var patientRecords = db.PatientRecords
+                                      .Where(p => p.DoctorId == doctorId)
+                                      .Where(p => (p.Patient.FirstName.ToUpper().Contains(term)) || (p.Patient.LastName.ToUpper().Contains(term)))
+                                      .ToList();
+
+                return patientRecords;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static PatientRecord AddPatientRecord(PatientRecord patientRecord)
         {
             try

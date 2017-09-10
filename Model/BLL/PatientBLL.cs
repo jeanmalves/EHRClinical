@@ -50,6 +50,36 @@ namespace Model.BLL
             }
         }
 
+        public static List<SourceList> GetPatientsListByTerm(string term)
+        {
+            ClinicalEntities db = new ClinicalEntities();
+
+            try
+            {
+                var patients = db.Patients
+                                 .Where(p => p.FirstName.ToUpper().Contains(term) || p.LastName.ToUpper().Contains(term))
+                                 .ToList();
+
+                List<SourceList> list = new List<SourceList>();
+
+                foreach (var item in patients)
+                {
+                    SourceList source = new SourceList();
+
+                    source.Value = item.Id.ToString();
+                    source.Name = item.FirstName + " " + item.LastName;
+
+                    list.Add(source);
+                }
+
+                return list;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static Patient GetPatientById(int? patientId)
         {
             try
