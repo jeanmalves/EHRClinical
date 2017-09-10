@@ -51,7 +51,9 @@ namespace EHRWebApplication.Controllers
                 Session["auth"] = "EHR_" + user.RolesGroup.Id;
                 Session["Id"] = user.Id;
 
-                return RedirectToAction("About", "Home");
+                var patient = PatientBLL.GetPatientByUserId(user.Id);
+
+                return RedirectToAction("Index", "PatientRecords", new { id = patient.Id });
             }
             else
             {
