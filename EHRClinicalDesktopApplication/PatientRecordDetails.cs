@@ -47,7 +47,19 @@ namespace EHRClinicalDesktopApplication
 
                 textAttribute.Location = new Point(220, height);
                 textAttribute.Name = "text" + item.TemplateAttribute.Attribute;
-                textAttribute.Text = item.Value;
+
+                if (item.TemplateAttribute.Type == "LIST")
+                {
+                    var dataElement = item.TemplateAttribute.DataListAttributes
+                                        .Where(da => da.AttributeId == item.TemplateAttribute.Id && da.Key == Convert.ToInt32(item.Value));
+                   
+                    textAttribute.Text = dataElement.FirstOrDefault().Value;
+                }
+                else
+                {
+                    textAttribute.Text = item.Value;
+                }
+                
                 textAttribute.Size = new Size(282, 20);
                 textAttribute.Enabled = false;
                 textAttribute.ReadOnly = true;
