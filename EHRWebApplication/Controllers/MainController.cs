@@ -14,6 +14,14 @@ namespace EHRWebApplication.Controllers
         {
             int role = (int)Session["role"];
             var features = FeatureBLL.GetFeaturesByRole(role);
+
+            if (role == (int) Model.DAO.Roles.PATIENT)
+            {
+                int userId = (int)Session["Id"];
+                var patient = PatientBLL.GetPatientByUserId(userId);
+                ViewBag.Patient = patient.Id;
+            }
+           
             return PartialView(features);
         }
     }

@@ -6,7 +6,15 @@
         <li>
             @if (item.OperationalsTemplate.IsController == 1)
             {
-                @Html.ActionLink(item.Name, "Index", item.OperationalsTemplate.Template);
+                if (item.OperationalsTemplate.Template == "PatientRecords")
+                {
+                    @Html.ActionLink(item.Name, "Index", item.OperationalsTemplate.Template, new { id = ViewBag.Patient }, null);
+                }
+                else
+                {
+                    @Html.ActionLink(item.Name, "Index", item.OperationalsTemplate.Template);    
+                }
+
             }
             else
             {
