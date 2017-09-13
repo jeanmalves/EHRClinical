@@ -39,6 +39,22 @@ namespace Model.BLL
             }
         }
 
+        public static DAO.User GetUserByEmail(string email)
+        {
+            try
+            {
+                ClinicalEntities db = new ClinicalEntities();
+
+                var user = db.Users.FirstOrDefault(u => u.Email == email);
+
+                return user;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static DAO.User Authenticate(DAO.User u)
         {
             ClinicalEntities db = new ClinicalEntities();

@@ -70,5 +70,18 @@
 </div>
 <p>
     @Html.ActionLink("Editar dados", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Meus procedimentos", "Index", "PatientRecords", new { id = Model.Id }, null)
+
+    @{
+        var role = (int)Session["role"];
+
+        if (role == 1)
+        {
+            @Html.ActionLink("Voltar para a lista", "Index")
+        }
+        else
+        {
+            @Html.ActionLink("Meus procedimentos", "Index", "PatientRecords", new { id = Model.Id }, null)
+        }
+    }
+    
 </p>
