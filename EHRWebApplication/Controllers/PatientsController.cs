@@ -17,6 +17,7 @@ namespace EHRWebApplication.Controllers
         private ClinicalEntities db = new ClinicalEntities();
 
         // GET: Patients
+        [Utils.Administrador]
         public ActionResult Index()
         {
             var patients = PatientBLL.GetPatients()

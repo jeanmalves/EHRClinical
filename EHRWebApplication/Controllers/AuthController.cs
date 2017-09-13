@@ -46,14 +46,13 @@ namespace EHRWebApplication.Controllers
             if (user != null)
             {
                 Session["user"] = user.UserName;
-                Session["email"] = user.Email;
                 Session["role"] = user.RolesGroup.Id;
                 Session["auth"] = "EHR_" + user.RolesGroup.Id;
                 Session["Id"] = user.Id;
 
-                var patient = PatientBLL.GetPatientByUserId(user.Id);
-
-                return RedirectToAction("Index", "PatientRecords", new { id = patient.Id });
+                System.Web.Security.FormsAuthentication.SetAuthCookie(user.Email, false);
+                
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -64,7 +63,6 @@ namespace EHRWebApplication.Controllers
 
         // POST: /Auth/LogOff
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {

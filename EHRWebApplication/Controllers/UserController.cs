@@ -1,4 +1,5 @@
-﻿using Model.DAO;
+﻿using Model.BLL;
+using Model.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,24 +8,32 @@ using System.Web.Mvc;
 
 namespace EHRWebApplication.Controllers
 {
-    public class UserController : Controller
+    public class UserController : MainController
     {
         // GET: User
         public ActionResult Index()
         {
-            return View();
+            return HttpNotFound("Funcionalidade não implementada.");
         }
 
         // GET: User/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            //var user = new User();
+
+            //if (id > 0)
+            //{
+            //    user = UserBLL.GetUserById(id);
+            //    return View(user);
+            //}
+
+            return RedirectToAction("Index");
         }
 
         // GET: User/Create
         public ActionResult Create()
         {
-            return View();
+            return RedirectToAction("Index");
         }
 
         // POST: User/Create
@@ -46,7 +55,7 @@ namespace EHRWebApplication.Controllers
         // GET: User/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return RedirectToAction("Index");
         }
 
         // POST: User/Edit/5
@@ -68,7 +77,7 @@ namespace EHRWebApplication.Controllers
         // GET: User/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return RedirectToAction("Index");
         }
 
         // POST: User/Delete/5
@@ -108,7 +117,7 @@ namespace EHRWebApplication.Controllers
                 
                 id = Convert.ToInt32(Session["Id"]);
 
-                return RedirectToAction("Details", id);
+                return RedirectToAction("Details", new { id = id });
             }
 
             return RedirectToAction("Login", "Auth");
