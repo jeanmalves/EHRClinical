@@ -34,7 +34,7 @@ namespace Model.DAO
 
         public static string getValue(short key)
         {
-            return RoleList[key];
+            return RoleList.ContainsKey(key) ? RoleList[key] : "";
         }
     }
 }
