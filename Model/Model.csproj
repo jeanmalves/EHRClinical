@@ -65,6 +65,7 @@
     <Compile Include="DAO\Archetype.cs">
       <DependentUpon>Clinical.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\BooleanDictionary.cs" />
     <Compile Include="DAO\Clinical.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +113,7 @@
     <Compile Include="DAO\Sex.cs" />
     <Compile Include="DAO\SexDictionary.cs" />
     <Compile Include="DAO\SourceList.cs" />
+    <Compile Include="DAO\StatusDictionary.cs" />
     <Compile Include="DAO\TemplateAttribute.cs">
       <DependentUpon>Clinical.tt</DependentUpon>
     </Compile>
