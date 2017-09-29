@@ -12,6 +12,7 @@ using Model.BLL;
 
 namespace EHRWebApplication.Controllers
 {
+    [Authorize]
     public class PatientsController : MainController
     {
         private ClinicalEntities db = new ClinicalEntities();
@@ -47,10 +48,14 @@ namespace EHRWebApplication.Controllers
             if (profile)
             {
                 patient = PatientBLL.GetPatientByUserId(id);
+                ViewBag.Title = "Perfil";
+                ViewBag.resource = "Dados do Usuário";
             }
             else
             {
                 patient = PatientBLL.GetPatientById(id);
+                ViewBag.Title = "Dados do Paciente";
+                ViewBag.resource = "Detalhes";
             }
             
             if (patient == null)
@@ -72,6 +77,7 @@ namespace EHRWebApplication.Controllers
         }
 
         // GET: Patients/Create
+        [Utils.Administrador]
         public ActionResult Create()
         {
             var patientVM = new PatientViewModel();
@@ -85,6 +91,7 @@ namespace EHRWebApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Utils.Administrador]
         public ActionResult Create(PatientViewModel pa, UserViewModel User)
         {
             if (ModelState.IsValid)

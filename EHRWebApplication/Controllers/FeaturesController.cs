@@ -4,6 +4,7 @@ using Model.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -68,18 +69,54 @@ namespace EHRWebApplication.Controllers
         // GET: Features/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var feature = FeatureBLL.GetFeatureById(id);
+
+            if (feature == null)
+            {
+                return HttpNotFound();
+            }
+
+            var editFeature = new EditFeatureViewModel();
+            
+            if (feature != null)
+            {
+                editFeature.Id = feature.Id;
+                editFeature.Feature = feature.Name;
+                editFeature.Description = feature.Description;
+                editFeature.DisplayMenu = feature.DisplayMenu;
+                editFeature.RoleGroup = feature.FeatureGroups.FirstOrDefault(f => f.FeatureID == feature.Id).RoleGroupID;
+                editFeature.Status = feature.status;
+            }
+
+            return View(editFeature);
         }
 
         // POST: Features/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(EditFeatureViewModel editFeature)
         {
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    var feature = new Feature();
 
-                return RedirectToAction("Index");
+                    feature.Id = editFeature.Id;
+                    feature.Name = editFeature.Feature;
+                    feature.Description = editFeature.Description;
+                    feature.DisplayMenu = editFeature.DisplayMenu;
+                    feature.status = editFeature.Status;
+                    feature.UserId = (int)Session["Id"];
+
+                    var updated = FeatureBLL.UpdateFeature(feature, editFeature.RoleGroup);
+
+                    if (updated)
+                    {
+                        return RedirectToAction("Details", new { id = feature.Id });
+                    }
+                }
+
+                return View(editFeature);
             }
             catch
             {

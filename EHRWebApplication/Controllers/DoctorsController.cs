@@ -203,9 +203,9 @@ namespace EHRWebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Doctor doctor = db.Doctors.Find(id);
+           /* Doctor doctor = db.Doctors.Find(id);
             db.Doctors.Remove(doctor);
-            db.SaveChanges();
+            db.SaveChanges(); */
             return RedirectToAction("Index");
         }
 
