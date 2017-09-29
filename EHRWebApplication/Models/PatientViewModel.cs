@@ -37,19 +37,24 @@ namespace EHRWebApplication.Models
     public class PatientDetailsViewModel
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório.")]
         [Display(Name = "Nome")]
         public string FirstName { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatório.")]
         [Display(Name = "Sobrenome")]
         public string LastName { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatório.")]
         [Display(Name = "Data de nascimento")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? Birth { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatório.")]
         [Display(Name = "Sexo")]
         public string Sex { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatório.")]
         [Display(Name = "EHR nº")]
         public string EhrNumber { get; set; }
 

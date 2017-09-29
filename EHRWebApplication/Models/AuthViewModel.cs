@@ -1,4 +1,5 @@
-﻿using Model.DAO;
+﻿using Model.BLL;
+using Model.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -22,7 +23,22 @@ namespace EHRWebApplication.Models
         public int Role { get; set; }
         public Dictionary<int, string> Roles
         {
-            get { return RolesDictionary.RoleList; }
+            get {
+
+                var rolesDictionary = new Dictionary<int, string>();
+
+                var roles = RoleGroupBLL.GetRolesGroup();
+
+                foreach (var role in roles)
+                {
+                    if (role.Id != (int) Model.DAO.Roles.DOCTOR)
+                    {
+                        rolesDictionary.Add(role.Id, role.Description);
+                    }
+                }
+                
+                return rolesDictionary;
+            }
             set { }
         }
     }
